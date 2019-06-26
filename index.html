@@ -24,48 +24,58 @@
 
     <!--STYLE NAVBAR-->
     <style>
+        /*Navbar fijo*/
         nav {
             position: fixed;
             z-index: 1;
         }
 
+        /*Tamaño de navbar principal*/
         #nav1 {
             height: 100px;
             transition: .8s;
         }
         
+        /*Tamaño de navbar secundario*/
         #nav2 {
             height: 65px;
             transition: .8s;
         }
 
+        /*Tamaño minimo para pasar al diseño movil*/
         #nav-mobile {
             min-width: 1068px;
         }
 
+        /*Etiqueta para visualizar las siglas de UNICA*/
         #visible{
             display : block;
         }
 
+        /*Etiqueta para quitar las siglas de UNICA*/
         #invisible{
             display : none;
         }
 
+        /*Transicion para cambiar de posicion el icono del sidenav del menú 2 al menú 1*/
         #menu1 {
             top: 19px;
             transition: .8s;
         }
 
+        /*Transicion para cambiar de posicion el icono de sidenav del menú 1 al menú 2*/
         #menu2 {
             top: 3px;
             transition: .8s;
         }
 
+        /*Transicion para cambiar de posicion del logo del menú 2 al menú 1*/
         #logo1 {
             top: 19px;
             transition: .8s;
         }
 
+        /*Transicion para cambiar de posicion del logo del menú 1 al menú 2*/
         #logo2 {
             top: 3px;
             transition: .8s;
@@ -74,8 +84,8 @@
 
     <!--JAVASCRIPT NAVBAR-->
     <script type="text/javascript">
-        window.onscroll = function() {
-            if(window.scrollY < 150){
+        window.onscroll = function() { //Detectar el cambio del scroll
+            if(window.scrollY < 150){ //Si se encuentra el scroll en la parte superior de la pagina se coloca el menú 1
                 var divNombre = document.getElementById("invisible");
                 divNombre.id = "visible";
 
@@ -87,7 +97,7 @@
 
                 var menu = document.getElementById("menu2");
                 menu.id = "menu1";                         
-            }else{
+            }else{ //Si se encuentra el scroll en la parte inferior de la pagina se coloca el menu 2
                 var divNombre = document.getElementById("visible");
                 divNombre.id = "invisible"; 
 
