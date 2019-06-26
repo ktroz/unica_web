@@ -80,6 +80,11 @@
             top: 3px;
             transition: .8s;
         }
+
+        #dimension {
+            height: 60px;
+            width: 100px;
+        }
     </style>
 
     <!--JAVASCRIPT NAVBAR-->
@@ -120,7 +125,7 @@
             <div class="nav-wrapper container row">
                 <!--LOGO-->
                 <div class="col s4">
-                    <a href="" class="brand-logo" id="logo1">UNICA</a>
+                    <a href="" class="brand-logo" id="logo1"><img src="imagenes/LOGOUNICA_claro.png" id="dimension"></a>
                     <a data-target="menu-responsive" class="sidenav-trigger" id="menu1"><i class="material-icons">menu</i></a>
                 </div>
                 <!--MENU-->
@@ -150,6 +155,157 @@
         </ul>
     </header>
     
+    <!--CARUSEL-->
+    <section>
+        <div class="carousel carousel-slider" id="carousel">
+            <a class="carousel-item" href=""><img src="imagenes/imagen1.jpg"></a>
+            <a class="carousel-item" href=""><img src="imagenes/imagen2.jpg"></a>
+            <a class="carousel-item" href=""><img src="imagenes/imagen3.jpg"></a>
+        </div>
+    </section>
+
+    <section class="container section">
+        <div class="row">
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="imagenes/imagen1.jpg">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="imagenes/imagen2.jpg">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="imagenes/imagen3.jpg">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+          <!-- services / tabs -->
+          <section class="section container" id="services">
+            <div class="row">
+              <div class="col s12 l4">
+                <h2 class="indigo-text text-darken-4">What I do..</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec,
+                  tincidunt orci.</p>
+                <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae
+                  scelerisque erat ornare nec.</p>
+              </div>
+              <div class="col s12 l6 offset-l2">
+                <!-- tabs -->
+                <ul class="tabs">
+                  <li class="tab col s6">
+                    <a href="#photography" class="active indigo-text text-darken-4">Photography</a>
+                  </li>
+                  <li class="tab col s6">
+                    <a href="#editing" class="indigo-text text-darken-4">Editing</a>
+                  </li>
+                </ul>
+                <div id="photography" class="col s12">
+                  <p class="flow-text indigo-text text-darken-4">Photography</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec,
+                    tincidunt orci.</p>
+                  <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae
+                    scelerisque erat ornare nec.</p>
+                </div>
+                <div id="editing" class="col s12">
+                  <p class="flow-text indigo-text text-darken-4">Editing</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec,
+                    tincidunt orci.</p>
+                  <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae
+                    scelerisque erat ornare nec.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+          </section>
+        
+          <!-- contact form -->
+          <section class="section container" id="contact">
+            <div class="row">
+              <div class="col s12 l5">
+                <h2 class="indigo-text text-darken-4">Get in Touch</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec,
+                  tincidunt orci.</p>
+                <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae
+                  scelerisque erat ornare nec.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec,
+                  tincidunt orci.</p>
+                <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae
+                  scelerisque erat ornare nec.</p>
+              </div>
+              <div class="col s12 l5 offset-l2">
+                <form>
+                  <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" id="email">
+                    <label for="email">Your Email</label>
+                  </div>
+                  <div class="input-field">
+                    <i class="material-icons prefix">message</i>
+                    <textarea id="message" class="materialize-textarea" cols="20" rows="20"></textarea>
+                    <label for="message">Your Message</label>
+                  </div>
+                  <div class="input-field">
+                    <i class="material-icons prefix">date_range</i>
+                    <input type="text" id="date" class="datepicker">
+                    <label for="date">Choose a date you need me for...</label>
+                  </div>
+                  <div class="input-field">
+                    <p>Services required:</p>
+                    <p>
+                      <label>
+                        <input type="checkbox">
+                        <span>Photography</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input type="checkbox">
+                        <span>Photo Editing</span>
+                      </label>
+                    </p>
+                  </div>
+                  <div class="input-field center">
+                    <button class="btn">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
 
     <!--FOOTER-->
     <footer class="page-footer indigo darken-4 z-depth-5">
@@ -191,6 +347,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             M.AutoInit();
+
+            var elems = document.querySelectorAll('.carousel');
+            var instances = M.Carousel.init(elems, {
+                duration: 500,
+                indicators: true
+            });
         });
     </script>
 </body>
