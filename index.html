@@ -5,8 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>UNICA</title>
+
+    <!--CDN CSS DE MATERIALIZE-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--IMPORTANDO TIPOGRAFIA ROBOTO-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <style>
+        body {
+        font-family: 'Roboto';
+        font-size: 16px;
+        }
+    </style>
+
+    <!--IMPORTANDO ICONOS DE GOOGLE-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--STYLE NAVBAR-->
+    <style>
+        nav {
+            position: fixed;
+            z-index: 1;
+        }
+
+        #nav1 {
+            height: 100px;
+            transition: .8s;
+        }
+        
+        #nav2 {
+            height: 65px;
+            transition: .8s;
+        }
+
+        #nav-mobile {
+            min-width: 1068px;
+        }
+
+        #visible{
+            display : block;
+        }
+
+        #invisible{
+            display : none;
+        }
+
+        #menu1 {
+            top: 19px;
+            transition: .8s;
+        }
+
+        #menu2 {
+            top: 3px;
+            transition: .8s;
+        }
+
+        #logo1 {
+            top: 19px;
+            transition: .8s;
+        }
+
+        #logo2 {
+            top: 3px;
+            transition: .8s;
+        }
+    </style>
+
+    <!--JAVASCRIPT NAVBAR-->
+    <script type="text/javascript">
+        window.onscroll = function() {
+            if(window.scrollY < 150){
+                var divNombre = document.getElementById("invisible");
+                divNombre.id = "visible";
+
+                var tamNav = document.getElementById("nav2");
+                tamNav.id = "nav1";    
+
+                var menu = document.getElementById("logo2");
+                menu.id = "logo1";
+
+                var menu = document.getElementById("menu2");
+                menu.id = "menu1";                         
+            }else{
+                var divNombre = document.getElementById("visible");
+                divNombre.id = "invisible"; 
+
+                var tamNav = document.getElementById("nav1");
+                tamNav.id = "nav2";
+
+                var menu = document.getElementById("logo1");
+                menu.id = "logo2";
+
+                var menu = document.getElementById("menu1");
+                menu.id = "menu2";  
+            }
+        };
+    </script>
 </head>
 <body>
-    
+    <header>
+        <!--CONTENIDO DEL NAV-BAR-->
+        <nav class="indigo darken-4 z-depth-5 nav-extended" id="nav1">
+            <div class="nav-wrapper container row">
+                <!--LOGO-->
+                <div class="col s4">
+                    <a href="" class="brand-logo" id="logo1">UNICA</a>
+                    <a data-target="menu-responsive" class="sidenav-trigger" id="menu1"><i class="material-icons">menu</i></a>
+                </div>
+                <!--MENU-->
+                <div class="col s8">
+                    <div id="visible">
+                        <h6 class="hide-on-med-and-down">&nbsp;&ensp;UNIDAD DE SERVICIOS DE COMPUTO ACADEMICO</h6>
+                    </div>
+                    <ul id="nav-mobile" class="hide-on-med-and-down">
+                        <li><a href="">Organización</a></li>
+                        <li><a href="">Servicios</a></li>
+                        <li><a href="">Becarios</a></li>
+                        <li><a href="">Cusos</a></li>
+                        <li><a href="">Instalaciones</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--MENU RESPONSIVO-->
+        <ul class="sidenav" id="menu-responsive">
+            <li><a class="center indigo darken-4 white-text">MENÚ</a></li>
+            <li><a href=""><i class="material-icons">group</i>Organización</a></li>
+            <li><a href=""><i class="material-icons">business_center</i>Servicios</a></li>
+            <li><a href=""><i class="material-icons">person</i>Becarios</a></li>
+            <li><a href=""><i class="material-icons">school</i>Cursos</a></li>
+            <li><a href=""><i class="material-icons">location_city</i>Instalaciones</a></li>
+        </ul>
+    </header>
+
+    <!--CDN JAVASCRIPT DE MATERIALIZE-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            M.AutoInit();
+        });
+    </script>
 </body>
 </html>
