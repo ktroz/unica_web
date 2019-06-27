@@ -9,6 +9,8 @@
     <!--CDN CSS DE MATERIALIZE-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+    <!--CDN JQUERY-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <!--IMPORTANDO TIPOGRAFIA ROBOTO-->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
@@ -27,6 +29,7 @@
         /*Navbar fijo*/
         nav {
             position: fixed;
+            top: 0px;
             z-index: 1;
         }
 
@@ -83,10 +86,87 @@
 
         #dimension {
             height: 60px;
-            width: 100px;
+            width: 90px;
         }
     </style>
 
+    <!--STYLE CAROUSEL-->
+    <style>
+        /*Transicion para el puntero y espacios para las cartas*/
+        .card{
+            padding: 10px 0px;
+            transition: .8s;
+        }
+
+        /*Tamaño al colocarse sobre la carta con el puntero*/
+        .card:hover{
+            transform: scale(1.03);
+        }
+    </style>
+
+    <!--STYLE CAROUSEL-->
+    <style>
+        /*Separacion del TOP de la pagina*/
+        #carousel{
+            margin-top: 100px;
+        }
+
+        .indicator-item{
+            padding: 7px;
+        }
+
+        #botonIzquierdo{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-size: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            color: #228291;
+            line-height: 30px;
+            margin-top: -240px;
+            z-index: 1000;
+        }
+
+        #botonDerecho{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-size: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            color: #228291;
+            line-height: 30px;
+            margin-top: -240px;
+            z-index: 1000;
+            right: 0px;
+        }
+    </style>
+
+    <!--SCRIPT CAROUSEL-->
+    <script>
+        $(document).ready(function(){
+            //Movimiento automatico
+            setInterval(function(){
+                $('.carousel').carousel('next');
+            }, 5000);
+
+            //Movimineto por boton
+            $('.next').click(function(){
+                $('.carousel').carousel('next');
+            });
+
+            //Movimiento por boton
+            $('.prev').click(function(){
+                $('.carousel').carousel('prev');
+            });
+        });
+    </script>
+    
     <!--JAVASCRIPT NAVBAR-->
     <script type="text/javascript">
         window.onscroll = function() { //Detectar el cambio del scroll
@@ -156,17 +236,22 @@
     </header>
     
     <!--CARUSEL-->
-    <section>
+    <section id="carousel">
         <div class="carousel carousel-slider" id="carousel">
             <a class="carousel-item" href=""><img src="imagenes/imagen1.jpg"></a>
             <a class="carousel-item" href=""><img src="imagenes/imagen2.jpg"></a>
             <a class="carousel-item" href=""><img src="imagenes/imagen3.jpg"></a>
         </div>
+        <label class="prev" id="botonIzquierdo"><i class="material-icons">navigate_before</i></label>
+        <label class="next" id="botonDerecho"><i class="material-icons">navigate_next</i></label>
     </section>
 
+    
+
+    <!--CARDS-->
     <section class="container section">
         <div class="row">
-            <div class="col s4">
+            <div class="col s12 m6 l4">
                 <div class="card">
                     <div class="card-image">
                         <img src="imagenes/imagen1.jpg">
@@ -181,7 +266,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s4">
+            <div class="col s12 m6 l4">
                 <div class="card">
                     <div class="card-image">
                         <img src="imagenes/imagen2.jpg">
@@ -196,7 +281,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s4">
+            <div class="col s12 m6 l4">
                 <div class="card">
                     <div class="card-image">
                         <img src="imagenes/imagen3.jpg">
@@ -348,9 +433,10 @@
         document.addEventListener('DOMContentLoaded', function () {
             M.AutoInit();
 
+            //CAROUSEL
             var elems = document.querySelectorAll('.carousel');
             var instances = M.Carousel.init(elems, {
-                duration: 500,
+                duration: 400,
                 indicators: true
             });
         });
