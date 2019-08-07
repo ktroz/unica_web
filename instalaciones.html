@@ -1,0 +1,405 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UNICA</title>
+
+    <!--CDN CSS DE MATERIALIZE-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--CDN JQUERY-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!--IMPORTANDO TIPOGRAFIA ROBOTO-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <style>
+        body {
+        font-family: 'Roboto';
+        font-size: 16px;
+        }
+    </style>
+
+    <!--IMPORTANDO ICONOS DE GOOGLE-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--STYLE NAVBAR-->
+    <style>
+        /*Navbar fijo*/
+        nav {
+            position: fixed;
+            top: 0px;
+            z-index: 1;
+            background-color: #00213d;
+        }
+
+        /*Tamaño de navbar principal*/
+        #nav1 {
+            height: 100px;
+            transition: .8s;
+            background-color: #00213d;
+
+        }
+        
+        /*Tamaño de navbar secundario*/
+        #nav2 {
+            height: 65px;
+            transition: .8s;
+            background-color: #00213d;                        
+        }
+
+        /*Tamaño minimo para pasar al diseño movil*/
+        #nav-mobile {
+            min-width: 1068px;
+            color: #00213d;
+        }
+
+        /*Etiqueta para visualizar las siglas de UNICA*/
+        #visible{
+            display : block;
+        }
+
+        /*Etiqueta para quitar las siglas de UNICA*/
+        #invisible{
+            display : none;
+        }
+
+        /*Transicion para cambiar de posicion el icono del sidenav del menú 2 al menú 1*/
+        #menu1 {
+            top: 19px;
+            transition: .8s;
+        }
+
+        /*Transicion para cambiar de posicion el icono de sidenav del menú 1 al menú 2*/
+        #menu2 {
+            top: 3px;
+            transition: .8s;
+        }
+
+        /*Transicion para cambiar de posicion del logo del menú 2 al menú 1*/
+        #logo1 {
+            top: 19px;
+            transition: .8s;
+        }
+
+        /*Transicion para cambiar de posicion del logo del menú 1 al menú 2*/
+        #logo2 {
+            top: 3px;
+            transition: .8s;
+        }
+
+        #dimension {
+            height: 60px;
+            width: 90px;
+        }
+    </style>
+    <!--STYLE NAVBAR SECUNDARIO-->
+    <style>
+        @media screen and (max-width: 800px){
+            #botonNavBarSecundario{
+                display: none;
+            }
+        }
+        @media screen and (min-width: 800px){
+            #botonNavBarSecundario{
+                position: fixed;
+                margin-left: 10px;
+            }
+        }
+        #textoBoton{
+            color: black;
+        }
+
+    </style>
+    <!--STYLE INSTALACIONES-->
+    <style> 
+        a img { display:none; }
+        a:hover img { display:block; }
+    </style>
+    <!--STYLE MAPAS-->
+    
+    <style>
+            #contenedorMapa1{
+                position:right;
+                padding-left:17vw;
+            }
+            #contenedorMapa2{
+                position:right;
+                padding-right:9vw;
+            }
+            #contenedorMapa{
+                background-color:#7b1fa2 ;
+                padding: 10px;
+                padding-top: 95px;
+            }
+            @media screen and (max-width: 800px)
+            {
+                #mapa{
+                    height: 30vh;
+                    width: 80vw;
+                
+                }
+            }
+            @media screen and (min-width: 800px){
+                #mapa{
+                    height: 30vh;
+                    width: 30vw;
+                }
+            }
+            #tituloMapas{
+                padding-left: 17vw;
+                color:#006064;
+            }
+            #botonInstalaciones{
+                margin-left: 17vw;
+                border-radius: 25px;
+            }
+        </style>
+
+    <!--STYLE FOOTER-->
+    <style>
+    .page-footer{
+        background-color: #00213d;
+        width: 100vw;
+        padding-right: 8vw;
+        padding-left: 8vw;
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+    }
+    .footer-copyright{
+        width: 100vw;
+        margin-top: -20px;      
+        background-color: #e8ca4d;
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+    }
+    </style>
+    <!--JAVASCRIPT NAVBAR-->
+    <script type="text/javascript">
+        window.onscroll = function() { //Detectar el cambio del scroll
+            if(window.scrollY < 150){ //Si se encuentra el scroll en la parte superior de la pagina se coloca el menú 1
+                var divNombre = document.getElementById("invisible");
+                divNombre.id = "visible";
+
+                var tamNav = document.getElementById("nav2");
+                tamNav.id = "nav1";    
+
+                var menu = document.getElementById("logo2");
+                menu.id = "logo1";
+
+                var menu = document.getElementById("menu2");
+                menu.id = "menu1";                         
+            }else{ //Si se encuentra el scroll en la parte inferior de la pagina se coloca el menu 2
+                var divNombre = document.getElementById("visible");
+                divNombre.id = "invisible"; 
+
+                var tamNav = document.getElementById("nav1");
+                tamNav.id = "nav2";
+
+                var menu = document.getElementById("logo1");
+                menu.id = "logo2";
+
+                var menu = document.getElementById("menu1");
+                menu.id = "menu2";  
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <!--CONTENIDO DEL NAV-BAR-->
+        <nav class="nav-extended" id="nav1">
+            <div class="nav-wrapper container row">
+                <!--LOGO-->
+                <div class="col s4">
+                    <a href="./index.html" class="brand-logo" id="logo1"><img src="imagenes/LOGOUNICA_claro.png" id="dimension"></a>
+                    <a data-target="menu-responsive" class="sidenav-trigger" id="menu1"><i class="material-icons">menu</i></a>
+                </div>
+                <!--MENU-->
+                <div class="col s8">
+                    <div id="visible">
+                        <h6 class="hide-on-med-and-down">&nbsp;&ensp;UNIDAD DE SERVICIOS DE COMPUTO ACADEMICO</h6>
+                    </div>
+                    <ul id="nav-mobile" class="hide-on-med-and-down">
+                        <li><a href="">Organización</a></li>
+                        <li><a href="">Servicios</a></li>
+                        <li><a href="">Becarios</a></li>
+                        <li><a href="">Cusos</a></li>
+                        <li><a href="./instalaciones.html">Instalaciones</a></li>
+                        <li><a href="">Servicios dados</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--SideNav secundario-->
+        <ul class="sidenav" id="menuSecundario">
+            <li><a href="#carousel">Noticias Importantes</a></li>
+            <li><a href="#cartas">Paginas más visitadas</a></li>
+            <li><a href="#PMV">Mision Vision y politica</a></li>
+            <li><a href="#contact">Contactanos</a></li>
+        </ul>        
+
+        <!--MENU RESPONSIVO-->
+        <ul class="sidenav" id="menu-responsive">
+            <li><a class="center white-text">MENÚ</a></li>
+            <li><a href=""><i class="material-icons">group</i>Organización</a></li>
+            <li><a href=""><i class="material-icons">business_center</i>Servicios</a></li>
+            <li><a href=""><i class="material-icons">person</i>Becarios</a></li>
+            <li><a href=""><i class="material-icons">school</i>Cursos</a></li>
+            <li><a href=""><i class="material-icons">location_city</i>Instalaciones</a></li>
+        </ul>
+    </header>
+     <!--BOTON PARA EL NAVBAR SECUNDARIO-->
+     <button id="botonNavBarSecundario" class="waves-effect waves-light btn">
+            <a href="#" class="sidenav-trigger" data-target="menuSecundario" id="textoBoton">Index Pagina</a>
+    </button>
+    <!--parte de los mapas-->
+    <div class="row" id="contenedorMapa">
+            <div id="contenedorMapa1" class="col m6 s12">                
+                <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.4653079697379!2d-99.18507089401125!3d19.33167644080505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000150b7a033%3A0x381b1d207c4b7d90!2sUNICA%3A+Principal!5e0!3m2!1ses-419!2smx!4v1565151929811!5m2!1ses-419!2smx" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div id="contenedorMapa2" class="col m6 s12">                
+                <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d279.8341581275111!2d-99.18283926094705!3d19.326472502759046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0005bfdabe9b%3A0xbaccc6d9bbb7f31c!2sUNICA%3A+Anexo!5e0!3m2!1ses-419!2smx!4v1565152811697!5m2!1ses-419!2smx"  frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    <section class="container section">
+        <div class="row">
+            <div class="col m5">
+                <h4>Oficinas</h4>
+                <div class="col m4">
+                        <h5><a href="#">Jefatura<img src="imagenes/instalaciones/jefatura.png"/></a></h5>
+                </div>
+                <div class="col m4">
+                        <h5><a href="#">Oficinas<img src="imagenes/instalaciones/oficinas.png"/></a></h5>
+                </div>
+                <div class="col m4">
+                        <h5><a href="#">Zona de Cubiculos<img src="imagenes/instalaciones/cubiculo.png"/></a></h5>
+                </div>              
+            </div>
+            <div class="col m7">
+                <!-- tabs -->
+                <ul class="tabs">
+                    <li class="tab col s3">
+                        <a href="#sala1" class="active indigo-text text-darken-4">Sala 1</a>
+                    </li>
+                    <li class="tab col s3">
+                        <a href="#sala2" class="indigo-text text-darken-4">Sala 2</a>
+                    </li>
+                    <li class="tab col s3">
+                        <a href="#sala3" class="indigo-text text-darken-4">Sala 3</a>
+                    </li>
+                    <li class="tab col s3">
+                        <a href="#sala4" class="indigo-text text-darken-4">Sala 4</a>
+                    </li>
+                </ul>
+                <div id="sala1" class="col s12">
+                    
+                    <p>Ubicación: Edificio principal de ingeniería</p><br>
+                    <p>Aulas: 1 </p><br>
+                    <p>Total de equipos: 12</p><br>
+                    <p>Sistemas operativos: Windows XP</p><br>
+                    <p>Software: Word, Excel, Power Ponit, Autocad, Matlab, Flash 8, C++</p><br>
+                    <p>impresoras: 3</p><br>
+                </div>
+                <div id="sala2" class="col s12">
+                    
+                    <p>Ubicación: 
+                        Anexo de Ingeniería 
+                        (Abajo del Auditorío Sotero Prieto)</p><br>
+                    <p>Aulas: A, B, C y D</p><br>
+                    <p>Total de equipos: 58</p><br>
+                    <p>Sistemas operativos: Windows 98, 2000 y XP</p><br>
+                    <p>Software: Word, Excel, Power Ponit, C++ 
+                            Ver más... </p><br>
+                    <p>impresoras: 1</p><br>
+                </div>
+                <div id="sala3" class="col s12">
+                    
+                    <p>Ubicación: 
+                        Anexo de Ingeniería 
+                        (Planta baja de la Torre de Ingeniería)</p><br>
+                    <p>Aulas: E, F, G y H</p><br>
+                    <p>Total de equipos: 145</p><br>
+                    <p>Sistemas operativos:
+                        Windows 98, 2000 y XP 
+                        LINUX (Fedora y Ubuntu)</p><br>
+                    <p>Software: Word, Excel, Power Ponit, C++ </p><br>
+                    <p>impresoras: 2</p><br>
+                </div>
+                <div id="sala4" class="col s12">
+                    
+                    <p>Ubicación: Posgrado de Ingeniería</p><br>
+                    <p>Aulas: Posgrado</p><br>
+                    <p>Total de equipos: 28</p><br>
+                    <p>Sistemas operativos: Windows XP</p><br>
+                    <p>Software: 	
+                            Macromedia 8, Microsoft Office 2003, Maple, 
+                            Matemática 5.2, Autocad 2004, Mind Manager, 
+                            Matlab, Photoshop, Nero, Visual Basic 6, Sap 2000, C++</p><br>
+                    <p>impresoras: 1</p><br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FOOTER-->
+    <footer class="page-footer">
+            <!--PARTE AZUL-->
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m8 left">
+                        <p>
+                            UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO <br>
+                            Facultad de Ingeniería, Av. Universidad 3000, <br>
+                            Ciudad Universitaria, Coyoacan, CDMX, C.P. 04510 <br>
+                            Edificio E <br>
+                            Tel.: 56 22 09 51 <br>
+                            Correo: dsa@unica.unam.mx <br>
+                        </p>
+                    </div>
+                    <div class="col s12 m4 right"> 
+                        <p> 
+                            <div class= "col s2 m12">
+                                    <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
+                            </div>
+                            <div class= "col s2 m12">
+                                    <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
+                            </div>
+                            <div class= "col s2 m12">
+                                    <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
+                            </div>
+                        </p> 
+                    </div>
+                </div>
+            </div>
+            
+            
+        </footer>
+        <!--PARTE AMARILLA-->
+        <div class="footer-copyright">
+                <div class="container center-align white-text">
+                    Todos los derechos reservados &copy; 1999 - 2019 / Facultad de ingeniería / UNAM | Versión 0.1
+                </div>
+        </div>
+         
+        
+    
+        <!--CDN JAVASCRIPT DE MATERIALIZE-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+        <script>        
+            document.addEventListener('DOMContentLoaded', function () {
+                M.AutoInit();
+                //SIDENAV
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems);
+                
+                
+            });
+        </script>
+    </body>
+    </html>

@@ -31,23 +31,28 @@
             position: fixed;
             top: 0px;
             z-index: 1;
+            background-color: #00213d;
         }
 
         /*Tamaño de navbar principal*/
         #nav1 {
             height: 100px;
             transition: .8s;
+            background-color: #00213d;
+
         }
         
         /*Tamaño de navbar secundario*/
         #nav2 {
             height: 65px;
             transition: .8s;
+            background-color: #00213d;                        
         }
 
         /*Tamaño minimo para pasar al diseño movil*/
         #nav-mobile {
             min-width: 1068px;
+            color: #00213d;
         }
 
         /*Etiqueta para visualizar las siglas de UNICA*/
@@ -89,6 +94,39 @@
             width: 90px;
         }
     </style>
+    <!--STYLE NAVBAR SECUNDARIO-->
+    <style>
+        @media screen and (max-width: 800px){
+            #botonNavBarSecundario{
+                display: none;
+            }
+        }
+        @media screen and (min-width: 800px){
+            #botonNavBarSecundario{
+                position: fixed;
+                margin-left: 10px;
+            }
+        }
+        #textoBoton{
+            color: black;
+        }
+
+    </style>
+
+    <!--STYLE FOOTER-->
+    <style>
+    .page-footer{
+        background-color: #00213d;
+        width: 100vw;
+        padding-right: 8vw;
+        padding-left: 8vw;
+    }
+    .footer-copyright{
+        width: 100vw;
+        margin-top: -20px;      
+        background-color: #e8ca4d;
+    }
+    </style>
 
     <!--STYLE CAROUSEL-->
     <style>
@@ -97,7 +135,9 @@
             padding: 10px 0px;
             transition: .8s;
         }
-
+        #carta1{
+            height: 40vh;
+        }
         /*Tamaño al colocarse sobre la carta con el puntero*/
         .card:hover{
             transform: scale(1.03);
@@ -109,16 +149,16 @@
         /*Separacion del TOP de la pagina*/
         #carousel{
             margin-top: 100px;
+            height: 40vh;
         }
 
         .indicator-item{
             padding: 7px;
         }
-
         #botonIzquierdo{
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 15vw;
+            height: 15vh;
             text-align: center;
             font-size: 25px;
             border-radius: 50%;
@@ -126,14 +166,14 @@
             font-size: 20px;
             color: #228291;
             line-height: 30px;
-            margin-top: -240px;
-            z-index: 1000;
+            margin-top: -140px;
+            z-index: 0;
         }
 
         #botonDerecho{
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 15vw;
+            height: 15vh;
             text-align: center;
             font-size: 25px;
             border-radius: 50%;
@@ -141,12 +181,94 @@
             font-size: 20px;
             color: #228291;
             line-height: 30px;
-            margin-top: -240px;
-            z-index: 1000;
+            margin-top: -140px;
+            z-index: 0;
             right: 0px;
         }
     </style>
+    <!--STYLE IMAGENES CAROUSEL-->
+    <style>
+        #imagen1{
+            height: 100%;
+            width: 60%;           
+        }
+        #imagen2{
+            height: 100%;
+            width: 60%;            
+        }
+        #imagen3{
+            height: 100%;
+            width: 60%;            
+        }
+    </style>
+    <!--STYLE SIDENAV-->
+    <style>
+        #sidenavLogo{
+            background-color:#01579b;
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+    </style>
+    <!--STYLE MAPAS-->
+    
+    <style>
+        #contenedorMapa1{
+            position:right;
+            padding-left:17vw;
+        }
+        #contenedorMapa2{
+            position:right;
+            padding-right:9vw;
+        }
+        #contenedorMapa{
+            background-color:#64b5f6;
+            padding: 10px;
+        }
+        @media screen and (max-width: 800px)
+        {
+            #mapa{
+                height: 30vh;
+                width: 80vw;
+            
+            }
+        }
+        @media screen and (min-width: 800px){
+            #mapa{
+                height: 30vh;
+                width: 30vw;
+            }
+        }
+        #tituloMapas{
+            padding-left: 17vw;
+            color:#006064;
+        }
+        #botonInstalaciones{
+            margin-left: 17vw;
+            border-radius: 25px;
+        }
+    </style>
 
+    <!--STYLE SECCION MISION VISION Y POLITICA-->
+    <style>
+        /*Politica Mision Objetivos*/
+        #PMV{
+            background-color: #1a237e;
+            border:0;
+            margin:0;
+        }
+        #politica{
+            color: #0091ea;
+        }
+        #mision{
+            color: #0091ea;
+        }
+        #vision{
+            color: #0091ea;
+        }
+        #textoPMV{
+            color: #00e5ff;
+        }
+    </style>
     <!--SCRIPT CAROUSEL-->
     <script>
         $(document).ready(function(){
@@ -201,11 +323,11 @@
 <body>
     <header>
         <!--CONTENIDO DEL NAV-BAR-->
-        <nav class="indigo darken-4 z-depth-5 nav-extended" id="nav1">
+        <nav class="nav-extended" id="nav1">
             <div class="nav-wrapper container row">
                 <!--LOGO-->
                 <div class="col s4">
-                    <a href="" class="brand-logo" id="logo1"><img src="imagenes/LOGOUNICA_claro.png" id="dimension"></a>
+                    <a href="./index.html" class="brand-logo" id="logo1"><img src="imagenes/LOGOUNICA_claro.png" id="dimension"></a>
                     <a data-target="menu-responsive" class="sidenav-trigger" id="menu1"><i class="material-icons">menu</i></a>
                 </div>
                 <!--MENU-->
@@ -218,169 +340,188 @@
                         <li><a href="">Servicios</a></li>
                         <li><a href="">Becarios</a></li>
                         <li><a href="">Cusos</a></li>
-                        <li><a href="">Instalaciones</a></li>
+                        <li><a href="./instalaciones.html">Instalaciones</a></li>
+                        <li><a href="">Servicios dados</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <!--SideNav secundario-->
+        <ul class="sidenav" id="menuSecundario">
+            <div class="row" id="sidenavLogo">
+                <div class="col m6">
+                        <a href="./index.html" class="brand-logo" id="logo1"><img src="imagenes/LOGOUNICA_claro.png" id="dimension"></a>
+                </div>
+                <div class="col m6">
+                        <a href="./index.html" class="brand-logo" id="logo1"><img src="imagenes/escudo_fi_color.png" id="dimension"></a>
+                </div>
+            </div>
+            <li><a href="#carousel">Noticias Importantes</a></li>
+            <li><a href="#cartas">Paginas más visitadas</a></li>
+            <li><a href="#PMV">Mision Vision y politica</a></li>
+            <li><a href="#contact">Instalaciones</a></li>
+            <li><a href="#contact">Contactanos</a></li>
+        </ul>        
 
         <!--MENU RESPONSIVO-->
         <ul class="sidenav" id="menu-responsive">
-            <li><a class="center indigo darken-4 white-text">MENÚ</a></li>
+            <li><a class="center white-text">MENÚ</a></li>
             <li><a href=""><i class="material-icons">group</i>Organización</a></li>
             <li><a href=""><i class="material-icons">business_center</i>Servicios</a></li>
             <li><a href=""><i class="material-icons">person</i>Becarios</a></li>
             <li><a href=""><i class="material-icons">school</i>Cursos</a></li>
-            <li><a href=""><i class="material-icons">location_city</i>Instalaciones</a></li>
+            <li><a href="./instalaciones.html"><i class="material-icons">location_city</i>Instalaciones</a></li>
         </ul>
     </header>
     
+    <!--BOTON PARA EL NAVBAR SECUNDARIO-->
+    <button id="botonNavBarSecundario" class="waves-effect waves-light btn">
+            <a href="#" class="sidenav-trigger" data-target="menuSecundario" id="textoBoton">Index Pagina</a>
+    </button>
     <!--CARUSEL-->
     <section id="carousel">
         <div class="carousel carousel-slider" id="carousel">
-            <a class="carousel-item" href=""><img src="imagenes/imagen1.jpg"></a>
-            <a class="carousel-item" href=""><img src="imagenes/imagen2.jpg"></a>
-            <a class="carousel-item" href=""><img src="imagenes/imagen3.jpg"></a>
+            <a class="carousel-item" href=""><img class="img-responsive center-block" src="imagenes/imagen1.jpg" id="imagen1"></a>
+            <a class="carousel-item" href=""><img class="img-responsive center-block" src="imagenes/imagen2.jpg" id="imagen2"></a>
+            <a class="carousel-item" href=""><img class="img-responsive center-block" src="imagenes/imagen3.jpg" id="imagen3"></a>
         </div>
         <label class="prev" id="botonIzquierdo"><i class="material-icons">navigate_before</i></label>
         <label class="next" id="botonDerecho"><i class="material-icons">navigate_next</i></label>
     </section>
-
     
 
     <!--CARDS-->
-    <section class="container section">
+    <section class="container section" id="cartas">
         <div class="row">
             <div class="col s12 m6 l4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="imagenes/imagen1.jpg">
-                        <span class="card-title">Card Title</span>
+                        <img src="imagenes/becarios.jpg" id="carta1">
+                        <span class="card-title"></span>
                     </div>
                     <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+                        <p>
+                            Para cualquier información sobre inscripción al programa, las etapas o la duración da click en el enlace de abajo.
+                        </p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
+                        <a href="#">Becarios</a>
                     </div>
                 </div>
             </div>
             <div class="col s12 m6 l4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="imagenes/imagen2.jpg">
-                        <span class="card-title">Card Title</span>
+                        <img src="imagenes/educafi.png">
+                        <span class="card-title">Servicios</span>
                     </div>
                     <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+                        <p>
+                            Si deseas conocer los servicios que maneja UNICA como virtualización, cloud storage, EDUCAFI o algún otro utiliza éste enlace.
+                        </p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
+                        <a href="#">Servicios</a>
                     </div>
                 </div>
             </div>
             <div class="col s12 m6 l4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="imagenes/imagen3.jpg">
-                        <span class="card-title">Card Title</span>
+                        <img src="imagenes/entrada_principal.png" >
+                        <span class="card-title">¿Quienes somos?</span>
                     </div>
                     <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+                        <p>Somos una unidad que ofrece servicios Tecnologías de la Información, y de la Comunicación TIC. 
+                            Además de contener programas que contribuyen a la formación de mejores Ingenieros.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
+                        <a href="#">Conócenos.</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        
+
+    <!--Parallax-->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="imagenes/fi.jpg" alt="">
+        </div>
+    </div>
           <!-- services / tabs -->
-          <section class="section container" id="services">
-            <div class="row">
-              <div class="col s12 l4">
-                <h2 class="indigo-text text-darken-4">What I do..</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec,
-                  tincidunt orci.</p>
-                <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae
-                  scelerisque erat ornare nec.</p>
-              </div>
-              <div class="col s12 l6 offset-l2">
-                <!-- tabs -->
-                <ul class="tabs">
-                  <li class="tab col s6">
-                    <a href="#photography" class="active indigo-text text-darken-4">Photography</a>
-                  </li>
-                  <li class="tab col s6">
-                    <a href="#editing" class="indigo-text text-darken-4">Editing</a>
-                  </li>
-                </ul>
-                <div id="photography" class="col s12">
-                  <p class="flow-text indigo-text text-darken-4">Photography</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec,
-                    tincidunt orci.</p>
-                  <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae
-                    scelerisque erat ornare nec.</p>
+        <div class="row" id="PMV">
+          <section class="section container">
+            
+                <div class="col s12 m12">
+                    <h3 class="" id="politica">Política de calidad</h3>
+                    <p id="textoPMV">
+                        En UNICA, nuestro objetivo fundamental es cumplir con los requisitos de nuestros usuarios en materia de TIC, teniendo como meta el actualizar y 
+                        elevar la calidad de nuestros productos y servicios. Por ello, nos comprometemos a trabajar bajo un proceso de mejora continua. 
+                    </p>                
                 </div>
-                <div id="editing" class="col s12">
-                  <p class="flow-text indigo-text text-darken-4">Editing</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec,
-                    tincidunt orci.</p>
-                  <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae
-                    scelerisque erat ornare nec.</p>
+                <div class="col s12 m12">
+                    <h3 class="" id="mision">Misión</h3>
+                    <p id="textoPMV">
+                            Proporcionar, eficaz y eficientemente, en el ámbito institucional los servicios de Tecnologías de la Información y la Comunicación, TIC,
+                            y de las Tecnologías de Aprendizaje y el conocimiento, TAC, que coadyuven al proceso integral de formación del del capital humano en la Facultad de Ingeniería. 
+                    </p>                
                 </div>
-              </div>
-            </div>
-            </div>
+                <div class="col s12 m12">
+                    <h3 class="" id="vision">Visión</h3>
+                    <p id="textoPMV">
+                        En UNICA, nuestro objetivo fundamental es cumplir con los requisitos de nuestros usuarios en materia de TIC, teniendo como meta el actualizar y 
+                        elevar la calidad de nuestros productos y servicios. Por ello, nos comprometemos a trabajar bajo un proceso de mejora continua. 
+                    </p>                
+                </div>
+    
           </section>
+        </div>
+        <!--parte de los mapas-->
+        <div class="row" id="contenedorMapa">
+            <h3 id="tituloMapas">Conoce nuestras instalaciones</h3>
+            <div id="contenedorMapa1" class="col m6 s12">                
+                <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.4653079697379!2d-99.18507089401125!3d19.33167644080505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000150b7a033%3A0x381b1d207c4b7d90!2sUNICA%3A+Principal!5e0!3m2!1ses-419!2smx!4v1565151929811!5m2!1ses-419!2smx" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div id="contenedorMapa2" class="col m6 s12">                
+                <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d279.8341581275111!2d-99.18283926094705!3d19.326472502759046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0005bfdabe9b%3A0xbaccc6d9bbb7f31c!2sUNICA%3A+Anexo!5e0!3m2!1ses-419!2smx!4v1565152811697!5m2!1ses-419!2smx"  frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <button id="botonInstalaciones" class="waves-effect cyan darken-4 btn" onclick="window.location.href='./instalaciones.html'">Instalaciones</button>
+        </div>
         
           <!-- contact form -->
           <section class="section container" id="contact">
             <div class="row">
               <div class="col s12 l5">
-                <h2 class="indigo-text text-darken-4">Get in Touch</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec,
-                  tincidunt orci.</p>
-                <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae
-                  scelerisque erat ornare nec.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec,
-                  tincidunt orci.</p>
-                <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae
-                  scelerisque erat ornare nec.</p>
+                <h2 class="indigo-text text-darken-4">Contáctate con nosotros</h2>
+                <p>
+                    Si necesitas ayuda con algunos de los servicios que ofrece UNICA, ya sea para información o soporte, no dudes en ponerte en contacto.
+                </p>
               </div>
               <div class="col s12 l5 offset-l2">
                 <form>
                   <div class="input-field">
                     <i class="material-icons prefix">email</i>
                     <input type="email" id="email">
-                    <label for="email">Your Email</label>
+                    <label for="email">Correo</label>
                   </div>
                   <div class="input-field">
                     <i class="material-icons prefix">message</i>
                     <textarea id="message" class="materialize-textarea" cols="20" rows="20"></textarea>
-                    <label for="message">Your Message</label>
+                    <label for="message">Escribe tu mensaje</label>
                   </div>
                   <div class="input-field">
-                    <i class="material-icons prefix">date_range</i>
-                    <input type="text" id="date" class="datepicker">
-                    <label for="date">Choose a date you need me for...</label>
-                  </div>
-                  <div class="input-field">
-                    <p>Services required:</p>
+                    <p>Tipo:</p>
                     <p>
                       <label>
                         <input type="checkbox">
-                        <span>Photography</span>
+                        <span>Soportre para algún servicio</span>
                       </label>
                     </p>
                     <p>
                       <label>
                         <input type="checkbox">
-                        <span>Photo Editing</span>
+                        <span>Información de algún servicio</span>
                       </label>
                     </p>
                   </div>
@@ -391,13 +532,14 @@
               </div>
             </div>
           </section>
-
+        
+        
     <!--FOOTER-->
-    <footer class="page-footer indigo darken-4 z-depth-5">
+    <footer class="page-footer">
         <!--PARTE AZUL-->
         <div class="container">
             <div class="row">
-                <div class="col s10">
+                <div class="col s12 m8 left">
                     <p>
                         UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO <br>
                         Facultad de Ingeniería, Av. Universidad 3000, <br>
@@ -407,38 +549,44 @@
                         Correo: dsa@unica.unam.mx <br>
                     </p>
                 </div>
-                <div class="col s2 right">
-                    <p>
-                        <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
-                        <br>
-                        <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
-                        <br>
-                        <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
-                    </p>
+                <div class="col s12 m4 right"> 
+                    <p> 
+                        <div class= "col s2 m12">
+                                <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
+                        </div>
+                        <div class= "col s2 m12">
+                                <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
+                        </div>
+                        <div class= "col s2 m12">
+                                <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
+                        </div>
+                    </p> 
                 </div>
             </div>
         </div>
-        <!--PARTE AMARILLA-->
-        <div class="footer-copyright amber accent-4">
+        
+        
+    </footer>
+    <!--PARTE AMARILLA-->
+    <div class="footer-copyright">
             <div class="container center-align white-text">
                 Todos los derechos reservados &copy; 1999 - 2019 / Facultad de ingeniería / UNAM | Versión 0.1
             </div>
-        </div>
-    </footer>
+    </div>
+     
+    
 
     <!--CDN JAVASCRIPT DE MATERIALIZE-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script>
+    <script>        
         document.addEventListener('DOMContentLoaded', function () {
             M.AutoInit();
-
-            //CAROUSEL
-            var elems = document.querySelectorAll('.carousel');
-            var instances = M.Carousel.init(elems, {
-                duration: 400,
-                indicators: true
-            });
+            //SIDENAV
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+            
+            
         });
     </script>
 </body>
