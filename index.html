@@ -26,6 +26,12 @@
 
     <!--STYLE NAVBAR-->
     <style>
+        #organizacionContenido{
+         background-color: #00213d;
+        }
+        #textoOrganizacion{
+          color:white;
+        }
         /*Navbar fijo*/
         nav {
             position: fixed;
@@ -41,12 +47,12 @@
             background-color: #00213d;
 
         }
-        
+
         /*Tamaño de navbar secundario*/
         #nav2 {
             height: 65px;
             transition: .8s;
-            background-color: #00213d;                        
+            background-color: #00213d;
         }
 
         /*Tamaño minimo para pasar al diseño movil*/
@@ -117,13 +123,13 @@
     <style>
     .page-footer{
         background-color: #00213d;
-        width: 100vw;
+        width: 100%;
         padding-right: 8vw;
         padding-left: 8vw;
     }
     .footer-copyright{
-        width: 100vw;
-        margin-top: -20px;      
+        width: 100%;
+        margin-top: -20px;
         background-color: #e8ca4d;
     }
     </style>
@@ -190,15 +196,15 @@
     <style>
         #imagen1{
             height: 100%;
-            width: 60%;           
+            width: 60%;
         }
         #imagen2{
             height: 100%;
-            width: 60%;            
+            width: 60%;
         }
         #imagen3{
             height: 100%;
-            width: 60%;            
+            width: 60%;
         }
     </style>
     <!--STYLE SIDENAV-->
@@ -210,26 +216,23 @@
         }
     </style>
     <!--STYLE MAPAS-->
-    
+
     <style>
         #contenedorMapa1{
             position:right;
-            padding-left:17vw;
         }
         #contenedorMapa2{
             position:right;
-            padding-right:9vw;
         }
         #contenedorMapa{
             background-color:#64b5f6;
-            padding: 10px;
         }
         @media screen and (max-width: 800px)
         {
             #mapa{
                 height: 30vh;
                 width: 80vw;
-            
+
             }
         }
         @media screen and (min-width: 800px){
@@ -239,11 +242,10 @@
             }
         }
         #tituloMapas{
-            padding-left: 17vw;
             color:#006064;
         }
         #botonInstalaciones{
-            margin-left: 17vw;
+          z-index: 0;
             border-radius: 25px;
         }
     </style>
@@ -288,7 +290,7 @@
             });
         });
     </script>
-    
+
     <!--JAVASCRIPT NAVBAR-->
     <script type="text/javascript">
         window.onscroll = function() { //Detectar el cambio del scroll
@@ -297,16 +299,16 @@
                 divNombre.id = "visible";
 
                 var tamNav = document.getElementById("nav2");
-                tamNav.id = "nav1";    
+                tamNav.id = "nav1";
 
                 var menu = document.getElementById("logo2");
                 menu.id = "logo1";
 
                 var menu = document.getElementById("menu2");
-                menu.id = "menu1";                         
+                menu.id = "menu1";
             }else{ //Si se encuentra el scroll en la parte inferior de la pagina se coloca el menu 2
                 var divNombre = document.getElementById("visible");
-                divNombre.id = "invisible"; 
+                divNombre.id = "invisible";
 
                 var tamNav = document.getElementById("nav1");
                 tamNav.id = "nav2";
@@ -315,11 +317,17 @@
                 menu.id = "logo2";
 
                 var menu = document.getElementById("menu1");
-                menu.id = "menu2";  
+                menu.id = "menu2";
             }
         };
     </script>
 </head>
+<!--Estructura dropdown de la organización-->
+<ul id="organizacionContenido" class="dropdown-content">
+  <li><a href="#!" id="textoOrganizacion">Ideales</a></li>
+  <li><a href="#!" id="textoOrganizacion">Marco Historico</a></li>
+  <li><a href="#!" id="textoOrganizacion">Organigrama</a></li>
+</ul>
 <body>
     <header>
         <!--CONTENIDO DEL NAV-BAR-->
@@ -336,12 +344,11 @@
                         <h6 class="hide-on-med-and-down">&nbsp;&ensp;UNIDAD DE SERVICIOS DE COMPUTO ACADEMICO</h6>
                     </div>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <li><a href="">Organización</a></li>
+                        <li><a href="" class="dropdown-trigger" data-target="organizacionContenido">Organización</a></li>
                         <li><a href="">Servicios</a></li>
                         <li><a href="">Becarios</a></li>
                         <li><a href="">Cusos</a></li>
                         <li><a href="./instalaciones.html">Instalaciones</a></li>
-                        <li><a href="">Servicios dados</a></li>
                     </ul>
                 </div>
             </div>
@@ -359,9 +366,9 @@
             <li><a href="#carousel">Noticias Importantes</a></li>
             <li><a href="#cartas">Paginas más visitadas</a></li>
             <li><a href="#PMV">Mision Vision y politica</a></li>
-            <li><a href="#contact">Instalaciones</a></li>
+            <li><a href="#contenedorMapa">Instalaciones</a></li>
             <li><a href="#contact">Contactanos</a></li>
-        </ul>        
+        </ul>
 
         <!--MENU RESPONSIVO-->
         <ul class="sidenav" id="menu-responsive">
@@ -373,10 +380,10 @@
             <li><a href="./instalaciones.html"><i class="material-icons">location_city</i>Instalaciones</a></li>
         </ul>
     </header>
-    
+
     <!--BOTON PARA EL NAVBAR SECUNDARIO-->
-    <button id="botonNavBarSecundario" class="waves-effect waves-light btn">
-            <a href="#" class="sidenav-trigger" data-target="menuSecundario" id="textoBoton">Index Pagina</a>
+    <button id="botonNavBarSecundario" class="waves-effect waves-light btn sidenav-trigger" data-target="menuSecundario">
+            <a href="#"id="textoBoton">Index Pagina</a>
     </button>
     <!--CARUSEL-->
     <section id="carousel">
@@ -388,7 +395,7 @@
         <label class="prev" id="botonIzquierdo"><i class="material-icons">navigate_before</i></label>
         <label class="next" id="botonDerecho"><i class="material-icons">navigate_next</i></label>
     </section>
-    
+
 
     <!--CARDS-->
     <section class="container section" id="cartas">
@@ -432,7 +439,7 @@
                         <span class="card-title">¿Quienes somos?</span>
                     </div>
                     <div class="card-content">
-                        <p>Somos una unidad que ofrece servicios Tecnologías de la Información, y de la Comunicación TIC. 
+                        <p>Somos una unidad que ofrece servicios Tecnologías de la Información, y de la Comunicación TIC.
                             Además de contener programas que contribuyen a la formación de mejores Ingenieros.</p>
                     </div>
                     <div class="card-action">
@@ -452,43 +459,45 @@
           <!-- services / tabs -->
         <div class="row" id="PMV">
           <section class="section container">
-            
+
                 <div class="col s12 m12">
                     <h3 class="" id="politica">Política de calidad</h3>
                     <p id="textoPMV">
-                        En UNICA, nuestro objetivo fundamental es cumplir con los requisitos de nuestros usuarios en materia de TIC, teniendo como meta el actualizar y 
-                        elevar la calidad de nuestros productos y servicios. Por ello, nos comprometemos a trabajar bajo un proceso de mejora continua. 
-                    </p>                
+                        En UNICA, nuestro objetivo fundamental es cumplir con los requisitos de nuestros usuarios en materia de TIC, teniendo como meta el actualizar y
+                        elevar la calidad de nuestros productos y servicios. Por ello, nos comprometemos a trabajar bajo un proceso de mejora continua.
+                    </p>
                 </div>
                 <div class="col s12 m12">
                     <h3 class="" id="mision">Misión</h3>
                     <p id="textoPMV">
                             Proporcionar, eficaz y eficientemente, en el ámbito institucional los servicios de Tecnologías de la Información y la Comunicación, TIC,
-                            y de las Tecnologías de Aprendizaje y el conocimiento, TAC, que coadyuven al proceso integral de formación del del capital humano en la Facultad de Ingeniería. 
-                    </p>                
+                            y de las Tecnologías de Aprendizaje y el conocimiento, TAC, que coadyuven al proceso integral de formación del del capital humano en la Facultad de Ingeniería.
+                    </p>
                 </div>
                 <div class="col s12 m12">
                     <h3 class="" id="vision">Visión</h3>
                     <p id="textoPMV">
-                        En UNICA, nuestro objetivo fundamental es cumplir con los requisitos de nuestros usuarios en materia de TIC, teniendo como meta el actualizar y 
-                        elevar la calidad de nuestros productos y servicios. Por ello, nos comprometemos a trabajar bajo un proceso de mejora continua. 
-                    </p>                
+                        En UNICA, nuestro objetivo fundamental es cumplir con los requisitos de nuestros usuarios en materia de TIC, teniendo como meta el actualizar y
+                        elevar la calidad de nuestros productos y servicios. Por ello, nos comprometemos a trabajar bajo un proceso de mejora continua.
+                    </p>
                 </div>
-    
+
           </section>
         </div>
         <!--parte de los mapas-->
         <div class="row" id="contenedorMapa">
+          <div class="container section">
             <h3 id="tituloMapas">Conoce nuestras instalaciones</h3>
-            <div id="contenedorMapa1" class="col m6 s12">                
+            <div id="contenedorMapa1" class="col m6 s12">
                 <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.4653079697379!2d-99.18507089401125!3d19.33167644080505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000150b7a033%3A0x381b1d207c4b7d90!2sUNICA%3A+Principal!5e0!3m2!1ses-419!2smx!4v1565151929811!5m2!1ses-419!2smx" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
-            <div id="contenedorMapa2" class="col m6 s12">                
+            <div id="contenedorMapa2" class="col m6 s12">
                 <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d279.8341581275111!2d-99.18283926094705!3d19.326472502759046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0005bfdabe9b%3A0xbaccc6d9bbb7f31c!2sUNICA%3A+Anexo!5e0!3m2!1ses-419!2smx!4v1565152811697!5m2!1ses-419!2smx"  frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
             <button id="botonInstalaciones" class="waves-effect cyan darken-4 btn" onclick="window.location.href='./instalaciones.html'">Instalaciones</button>
+          </div>
         </div>
-        
+
           <!-- contact form -->
           <section class="section container" id="contact">
             <div class="row">
@@ -532,8 +541,8 @@
               </div>
             </div>
           </section>
-        
-        
+
+
     <!--FOOTER-->
     <footer class="page-footer">
         <!--PARTE AZUL-->
@@ -549,8 +558,8 @@
                         Correo: dsa@unica.unam.mx <br>
                     </p>
                 </div>
-                <div class="col s12 m4 right"> 
-                    <p> 
+                <div class="col s12 m4 right">
+                    <p>
                         <div class= "col s2 m12">
                                 <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
                         </div>
@@ -560,12 +569,12 @@
                         <div class= "col s2 m12">
                                 <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
                         </div>
-                    </p> 
+                    </p>
                 </div>
             </div>
         </div>
-        
-        
+
+
     </footer>
     <!--PARTE AMARILLA-->
     <div class="footer-copyright">
@@ -573,20 +582,20 @@
                 Todos los derechos reservados &copy; 1999 - 2019 / Facultad de ingeniería / UNAM | Versión 0.1
             </div>
     </div>
-     
-    
+
+
 
     <!--CDN JAVASCRIPT DE MATERIALIZE-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script>        
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             M.AutoInit();
             //SIDENAV
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems);
-            
-            
+
+
         });
     </script>
 </body>

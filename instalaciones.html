@@ -26,6 +26,12 @@
 
     <!--STYLE NAVBAR-->
     <style>
+        #organizacionContenido{
+         background-color: #00213d;
+        }
+        #textoOrganizacion{
+          color:white;
+        }
         /*Navbar fijo*/
         nav {
             position: fixed;
@@ -41,12 +47,12 @@
             background-color: #00213d;
 
         }
-        
+
         /*Tamaño de navbar secundario*/
         #nav2 {
             height: 65px;
             transition: .8s;
-            background-color: #00213d;                        
+            background-color: #00213d;
         }
 
         /*Tamaño minimo para pasar al diseño movil*/
@@ -112,20 +118,19 @@
         }
 
     </style>
-    <!--STYLE INSTALACIONES-->
-    <style> 
-        a img { display:none; }
-        a:hover img { display:block; }
-    </style>
     <!--STYLE MAPAS-->
-    
+
     <style>
             #contenedorMapa1{
                 position:right;
+                margin-bottom: : 30px;
+                margin-top: 20px;
                 padding-left:17vw;
             }
             #contenedorMapa2{
                 position:right;
+                margin-bottom: 30px;
+                margin-top: 20px;
                 padding-right:9vw;
             }
             #contenedorMapa{
@@ -138,7 +143,7 @@
                 #mapa{
                     height: 30vh;
                     width: 80vw;
-                
+
                 }
             }
             @media screen and (min-width: 800px){
@@ -156,27 +161,32 @@
                 border-radius: 25px;
             }
         </style>
-
+    <!--STYLE INFORMACION-->
+    <style>
+    #informacion{
+      height: 60vh;
+    }
+    </style>
+    <!--STYLE SIDENAV-->
+    <style>
+        #sidenavLogo{
+            background-color:#01579b;
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+    </style>
     <!--STYLE FOOTER-->
     <style>
     .page-footer{
         background-color: #00213d;
-        width: 100vw;
+        width: 100%;
         padding-right: 8vw;
         padding-left: 8vw;
-        position:fixed;
-        bottom:0;
-        left:0;
-        width:100%;
     }
     .footer-copyright{
-        width: 100vw;
-        margin-top: -20px;      
+        width: 100%;
+        margin-top: -20px;
         background-color: #e8ca4d;
-        position:fixed;
-        bottom:0;
-        left:0;
-        width:100%;
     }
     </style>
     <!--JAVASCRIPT NAVBAR-->
@@ -187,16 +197,16 @@
                 divNombre.id = "visible";
 
                 var tamNav = document.getElementById("nav2");
-                tamNav.id = "nav1";    
+                tamNav.id = "nav1";
 
                 var menu = document.getElementById("logo2");
                 menu.id = "logo1";
 
                 var menu = document.getElementById("menu2");
-                menu.id = "menu1";                         
+                menu.id = "menu1";
             }else{ //Si se encuentra el scroll en la parte inferior de la pagina se coloca el menu 2
                 var divNombre = document.getElementById("visible");
-                divNombre.id = "invisible"; 
+                divNombre.id = "invisible";
 
                 var tamNav = document.getElementById("nav1");
                 tamNav.id = "nav2";
@@ -205,11 +215,16 @@
                 menu.id = "logo2";
 
                 var menu = document.getElementById("menu1");
-                menu.id = "menu2";  
+                menu.id = "menu2";
             }
         };
     </script>
 </head>
+<ul id="organizacionContenido" class="dropdown-content">
+  <li><a href="#!" id="textoOrganizacion">Ideales</a></li>
+  <li><a href="#!" id="textoOrganizacion">Marco Historico</a></li>
+  <li><a href="#!" id="textoOrganizacion">Organigrama</a></li>
+</ul>
 <body>
     <header>
         <!--CONTENIDO DEL NAV-BAR-->
@@ -226,23 +241,15 @@
                         <h6 class="hide-on-med-and-down">&nbsp;&ensp;UNIDAD DE SERVICIOS DE COMPUTO ACADEMICO</h6>
                     </div>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <li><a href="">Organización</a></li>
+                        <li><a href="" class="dropdown-trigger" data-target="organizacionContenido">Organización</a></li>
                         <li><a href="">Servicios</a></li>
                         <li><a href="">Becarios</a></li>
                         <li><a href="">Cusos</a></li>
                         <li><a href="./instalaciones.html">Instalaciones</a></li>
-                        <li><a href="">Servicios dados</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!--SideNav secundario-->
-        <ul class="sidenav" id="menuSecundario">
-            <li><a href="#carousel">Noticias Importantes</a></li>
-            <li><a href="#cartas">Paginas más visitadas</a></li>
-            <li><a href="#PMV">Mision Vision y politica</a></li>
-            <li><a href="#contact">Contactanos</a></li>
-        </ul>        
 
         <!--MENU RESPONSIVO-->
         <ul class="sidenav" id="menu-responsive">
@@ -254,34 +261,40 @@
             <li><a href=""><i class="material-icons">location_city</i>Instalaciones</a></li>
         </ul>
     </header>
-     <!--BOTON PARA EL NAVBAR SECUNDARIO-->
-     <button id="botonNavBarSecundario" class="waves-effect waves-light btn">
-            <a href="#" class="sidenav-trigger" data-target="menuSecundario" id="textoBoton">Index Pagina</a>
-    </button>
     <!--parte de los mapas-->
     <div class="row" id="contenedorMapa">
-            <div id="contenedorMapa1" class="col m6 s12">                
+            <div id="contenedorMapa1" class="col m6 s12">
                 <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.4653079697379!2d-99.18507089401125!3d19.33167644080505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000150b7a033%3A0x381b1d207c4b7d90!2sUNICA%3A+Principal!5e0!3m2!1ses-419!2smx!4v1565151929811!5m2!1ses-419!2smx" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
-            <div id="contenedorMapa2" class="col m6 s12">                
+            <div id="contenedorMapa2" class="col m6 s12">
                 <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d279.8341581275111!2d-99.18283926094705!3d19.326472502759046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0005bfdabe9b%3A0xbaccc6d9bbb7f31c!2sUNICA%3A+Anexo!5e0!3m2!1ses-419!2smx!4v1565152811697!5m2!1ses-419!2smx"  frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
     <section class="container section">
         <div class="row">
-            <div class="col m5">
-                <h4>Oficinas</h4>
-                <div class="col m4">
-                        <h5><a href="#">Jefatura<img src="imagenes/instalaciones/jefatura.png"/></a></h5>
-                </div>
-                <div class="col m4">
-                        <h5><a href="#">Oficinas<img src="imagenes/instalaciones/oficinas.png"/></a></h5>
-                </div>
-                <div class="col m4">
-                        <h5><a href="#">Zona de Cubiculos<img src="imagenes/instalaciones/cubiculo.png"/></a></h5>
-                </div>              
+            <div class="col m6 s12">
+              <ul class="tabs">
+                  <li class="tab col s3">
+                      <a href="#oficinas" class="active indigo-text text-darken-4">Oficinas</a>
+                  </li>
+                  <li class="tab col s3">
+                      <a href="#jefatura" class="indigo-text text-darken-4">Jefatura</a>
+                  </li>
+                  <li class="tab col s3">
+                      <a href="#cubiculos" class="indigo-text text-darken-4">Servicios</a>
+                  </li>
+              </ul>
+              <div id="oficinas" class="col s12">
+                <img src="./imagenes/instalaciones/oficinas.png" alt="">
+              </div>
+              <div id="jefatura" class="col s12">
+                <img src="./imagenes/instalaciones/jefatura.png" alt="">
+              </div>
+              <div id="cubiculos" class="col s12">
+                <img src="./imagenes/instalaciones/cubiculo.png" alt="">
+              </div>
             </div>
-            <div class="col m7">
+            <div class="col m6 s12" id="informacion">
                 <!-- tabs -->
                 <ul class="tabs">
                     <li class="tab col s3">
@@ -298,50 +311,126 @@
                     </li>
                 </ul>
                 <div id="sala1" class="col s12">
-                    
-                    <p>Ubicación: Edificio principal de ingeniería</p><br>
-                    <p>Aulas: 1 </p><br>
-                    <p>Total de equipos: 12</p><br>
-                    <p>Sistemas operativos: Windows XP</p><br>
-                    <p>Software: Word, Excel, Power Ponit, Autocad, Matlab, Flash 8, C++</p><br>
-                    <p>impresoras: 3</p><br>
+                  <table class="highlight table-responsive">
+                    <tbody>
+                      <tr>
+                        <td>Ubicación:</td>
+                        <td>Edificio E, conjunto principal de ingeniería</td>
+                      </tr>
+                      <tr>
+                        <td>Aulas:</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>Total de equipos:</td>
+                        <td>12</td>
+                      </tr>
+                      <tr>
+                        <td>Sistemas operativos:</td>
+                        <td>Windows XP</td>
+                      </tr>
+                      <tr>
+                        <td>Software:</td>
+                        <td>Word, Excel, Power Point, Autocad, Matlab, Flash8, C++</td>
+                      </tr>
+                      <tr>
+                        <td>Impresoras:</td>
+                        <td>3</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
                 <div id="sala2" class="col s12">
-                    
-                    <p>Ubicación: 
-                        Anexo de Ingeniería 
-                        (Abajo del Auditorío Sotero Prieto)</p><br>
-                    <p>Aulas: A, B, C y D</p><br>
-                    <p>Total de equipos: 58</p><br>
-                    <p>Sistemas operativos: Windows 98, 2000 y XP</p><br>
-                    <p>Software: Word, Excel, Power Ponit, C++ 
-                            Ver más... </p><br>
-                    <p>impresoras: 1</p><br>
+                  <table class="highlight table-responsive">
+                    <tbody>
+                      <tr>
+                        <td>Ubicación:</td>
+                        <td>Anexo de Ingeniería (Abajo del Auditorío Sotero Prieto, edificio M)</td>
+                      </tr>
+                      <tr>
+                        <td>Aulas:</td>
+                        <td>A, B, C y D</td>
+                      </tr>
+                      <tr>
+                        <td>Total de equipos:</td>
+                        <td>58</td>
+                      </tr>
+                      <tr>
+                        <td>Sistemas operativos:</td>
+                        <td>Windows 98, 2000 y XP</td>
+                      </tr>
+                      <tr>
+                        <td>Software:</td>
+                        <td>Word, Excel, Power Ponit, C++</td>
+                      </tr>
+                      <tr>
+                        <td>Impresoras:</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
                 <div id="sala3" class="col s12">
-                    
-                    <p>Ubicación: 
-                        Anexo de Ingeniería 
-                        (Planta baja de la Torre de Ingeniería)</p><br>
-                    <p>Aulas: E, F, G y H</p><br>
-                    <p>Total de equipos: 145</p><br>
-                    <p>Sistemas operativos:
-                        Windows 98, 2000 y XP 
-                        LINUX (Fedora y Ubuntu)</p><br>
-                    <p>Software: Word, Excel, Power Ponit, C++ </p><br>
-                    <p>impresoras: 2</p><br>
+                  <table class="highlight table-responsive">
+                    <tbody>
+                      <tr>
+                        <td>Ubicación:</td>
+                        <td>Anexo de Ingeniería (Planta baja del edificio I)</td>
+                      </tr>
+                      <tr>
+                        <td>Aulas:</td>
+                        <td>E, F, G y H</td>
+                      </tr>
+                      <tr>
+                        <td>Total de equipos:</td>
+                        <td>145</td>
+                      </tr>
+                      <tr>
+                        <td>Sistemas operativos:</td>
+                        <td>Windows 98, 2000 y XP; LINUX(Fedora y Ubuntu)</td>
+                      </tr>
+                      <tr>
+                        <td>Software:</td>
+                        <td>Word, Excel, Power Ponit, C++</td>
+                      </tr>
+                      <tr>
+                        <td>Impresoras:</td>
+                        <td>2</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
                 <div id="sala4" class="col s12">
-                    
-                    <p>Ubicación: Posgrado de Ingeniería</p><br>
-                    <p>Aulas: Posgrado</p><br>
-                    <p>Total de equipos: 28</p><br>
-                    <p>Sistemas operativos: Windows XP</p><br>
-                    <p>Software: 	
-                            Macromedia 8, Microsoft Office 2003, Maple, 
-                            Matemática 5.2, Autocad 2004, Mind Manager, 
-                            Matlab, Photoshop, Nero, Visual Basic 6, Sap 2000, C++</p><br>
-                    <p>impresoras: 1</p><br>
+                  <table class="highlight table-responsive">
+                    <tbody>
+                      <tr>
+                        <td>Ubicación:</td>
+                        <td>Posgrado de Ingeniería</td>
+                      </tr>
+                      <tr>
+                        <td>Aulas:</td>
+                        <td>Posgrado</td>
+                      </tr>
+                      <tr>
+                        <td>Total de equipos:</td>
+                        <td>28</td>
+                      </tr>
+                      <tr>
+                        <td>Sistemas operativos:</td>
+                        <td>Windows XP</td>
+                      </tr>
+                      <tr>
+                        <td>Software:</td>
+                        <td>Macromedia 8, Microsoft Office 2003, Maple,
+                        Matemática 5.2, Autocad 2004, Mind Manager,
+                        Matlab, Photoshop, Nero, Visual Basic 6, Sap 2000, C++</td>
+                      </tr>
+                      <tr>
+                        <td>Impresoras:</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
             </div>
         </div>
@@ -361,8 +450,8 @@
                             Correo: dsa@unica.unam.mx <br>
                         </p>
                     </div>
-                    <div class="col s12 m4 right"> 
-                        <p> 
+                    <div class="col s12 m4 right">
+                        <p>
                             <div class= "col s2 m12">
                                     <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
                             </div>
@@ -372,12 +461,12 @@
                             <div class= "col s2 m12">
                                     <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
                             </div>
-                        </p> 
+                        </p>
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </footer>
         <!--PARTE AMARILLA-->
         <div class="footer-copyright">
@@ -385,20 +474,20 @@
                     Todos los derechos reservados &copy; 1999 - 2019 / Facultad de ingeniería / UNAM | Versión 0.1
                 </div>
         </div>
-         
-        
-    
+
+
+
         <!--CDN JAVASCRIPT DE MATERIALIZE-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
-        <script>        
+
+        <script>
             document.addEventListener('DOMContentLoaded', function () {
                 M.AutoInit();
                 //SIDENAV
                 var elems = document.querySelectorAll('.sidenav');
                 var instances = M.Sidenav.init(elems);
-                
-                
+
+
             });
         </script>
     </body>
