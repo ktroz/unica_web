@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UNICA</title>
+
+    <!--CDN CSS DE MATERIALIZE-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--CDN JQUERY-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!--IMPORTANDO TIPOGRAFIA ROBOTO-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <style>
+        body {
+        font-family: 'Roboto';
+        font-size: 16px;
+        }
+    </style>
+
+    <!--IMPORTANDO ICONOS DE GOOGLE-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--STYLE NAVBAR-->
+    <style>
+        #organizacionContenido{
+         background-color: #00213d;
+        }
+        #textoOrganizacion{
+          color:white;
+        }
+        /*Navbar fijo*/
+        nav {
+            position: fixed;
+            top: 0px;
+            z-index: 1;
+            background-color: #00213d;
+        }
+
+        /*Tamaño de navbar principal*/
+        #nav1 {
+            height: 100px;
+            transition: .8s;
+            background-color: #00213d;
+
+        }
+
+        /*Tamaño de navbar secundario*/
+        #nav2 {
+            height: 65px;
+            transition: .8s;
+            background-color: #00213d;
+        }
+
+        /*Tamaño minimo para pasar al diseño movil*/
+        #nav-mobile {
+            min-width: 1068px;
+            color: #00213d;
+        }
+
+        /*Etiqueta para visualizar las siglas de UNICA*/
+        #visible{
+            display : block;
+        }
+
+        /*Etiqueta para quitar las siglas de UNICA*/
+        #invisible{
+            display : none;
+        }
+
+        /*Transicion para cambiar de posicion el icono del sidenav del menú 2 al menú 1*/
+        #menu1 {
+            top: 19px;
+            transition: .8s;
+        }
+
+        /*Transicion para cambiar de posicion el icono de sidenav del menú 1 al menú 2*/
+        #menu2 {
+            top: 3px;
+            transition: .8s;
+        }
+
+        /*Transicion para cambiar de posicion del logo del menú 2 al menú 1*/
+        #logo1 {
+            top: 19px;
+            transition: .8s;
+        }
+
+        /*Transicion para cambiar de posicion del logo del menú 1 al menú 2*/
+        #logo2 {
+            top: 3px;
+            transition: .8s;
+        }
+
+        #dimension {
+            height: 60px;
+            width: 90px;
+        }
+    </style>
+    <!--STYLE NAVBAR SECUNDARIO-->
+    <style>
+        @media screen and (max-width: 800px){
+            #botonNavBarSecundario{
+                display: none;
+            }
+        }
+        @media screen and (min-width: 800px){
+            #botonNavBarSecundario{
+                position: fixed;
+                margin-left: 10px;
+            }
+        }
+        #textoBoton{
+            color: black;
+        }
+
+    </style>
+    <!--Style Barra lateral-->
+    <style>
+      #caja{
+        padding-top:15vh;
+      }
+      #barraLateral{
+        position:fixed;
+      }
+    </style>
+    <!--STYLE FOOTER-->
+    <style>
+    .page-footer{
+        background-color: #00213d;
+        width: 100%;
+        padding-right: 8vw;
+        padding-left: 8vw;
+    }
+    .footer-copyright{
+        width: 100%;
+        margin-top: -20px;
+        background-color: #e8ca4d;
+    }
+    </style>
+    <!--STYLE CUERPO-->
+    <style>
+    #parteIzquierda{
+      position: fixed;
+      width: 10vw;
+      height: 20vh;
+      background-color: #1565c0;
+      border-radius: 10px;
+    }
+    #parteDerecha{
+      float: right;
+    }
+    #textoIzquierda{
+      color: #1a237e;
+      font-size: 25px;
+    }
+    /*Style divs*/
+    #EGeneral{
+      display: block;
+    }
+    #salas{
+      display: none;
+    }
+    #DSA{
+      display: none;
+    }
+    #DSC{
+      display: none;
+    }
+    #DROS{
+      display: none;
+    }
+    #DID{
+      display: none;
+    }
+    h5{
+      color: #4a148c;
+    }
+    #separador{
+      width: 100%;
+      color: #311b92;
+    }
+    </style>
+    <!--JAVASCRIPT NAVBAR-->
+    <script type="text/javascript">
+        window.onscroll = function() { //Detectar el cambio del scroll
+            if(window.scrollY < 150){ //Si se encuentra el scroll en la parte superior de la pagina se coloca el menú 1
+                var divNombre = document.getElementById("invisible");
+                divNombre.id = "visible";
+
+                var tamNav = document.getElementById("nav2");
+                tamNav.id = "nav1";
+
+                var menu = document.getElementById("logo2");
+                menu.id = "logo1";
+
+                var menu = document.getElementById("menu2");
+                menu.id = "menu1";
+            }else{ //Si se encuentra el scroll en la parte inferior de la pagina se coloca el menu 2
+                var divNombre = document.getElementById("visible");
+                divNombre.id = "invisible";
+
+                var tamNav = document.getElementById("nav1");
+                tamNav.id = "nav2";
+
+                var menu = document.getElementById("logo1");
+                menu.id = "logo2";
+
+                var menu = document.getElementById("menu1");
+                menu.id = "menu2";
+            }
+        };
+    </script>
+</head>
+<!--Estructura dropdown de la organización-->
+<ul id="organizacionContenido" class="dropdown-content">
+  <li><a href="./ideales.html" id="textoOrganizacion">Ideales</a></li>
+  <li><a href="#!" id="textoOrganizacion">Marco Historico</a></li>
+  <li><a href="#!" id="textoOrganizacion">Organigrama</a></li>
+</ul>
+<body>
+    <header>
+        <!--CONTENIDO DEL NAV-BAR-->
+        <nav class="nav-extended" id="nav1">
+            <div class="nav-wrapper container row">
+                <!--LOGO-->
+                <div class="col s4">
+                    <a href="./index.html" class="brand-logo" id="logo1"><img src="imagenes/LOGOUNICA_claro.png" id="dimension"></a>
+                    <a data-target="menu-responsive" class="sidenav-trigger" id="menu1"><i class="material-icons">menu</i></a>
+                </div>
+                <!--MENU-->
+                <div class="col s8">
+                    <div id="visible">
+                        <h6 class="hide-on-med-and-down">&nbsp;&ensp;UNIDAD DE SERVICIOS DE COMPUTO ACADEMICO</h6>
+                    </div>
+                    <ul id="nav-mobile" class="hide-on-med-and-down">
+                        <li><a href="" class="dropdown-trigger" data-target="organizacionContenido">Organización</a></li>
+                        <li><a href="">Servicios</a></li>
+                        <li><a href="">Becarios</a></li>
+                        <li><a href="">Cusos</a></li>
+                        <li><a href="./instalaciones.html">Instalaciones</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--MENU RESPONSIVO-->
+        <ul class="sidenav" id="menu-responsive">
+            <li><a class="center white-text">MENÚ</a></li>
+            <li><a href=""><i class="material-icons">group</i>Organización</a></li>
+            <li><a href=""><i class="material-icons">business_center</i>Servicios</a></li>
+            <li><a href=""><i class="material-icons">person</i>Becarios</a></li>
+            <li><a href=""><i class="material-icons">school</i>Cursos</a></li>
+            <li><a href="./instalaciones.html"><i class="material-icons">location_city</i>Instalaciones</a></li>
+        </ul>
+    </header>
+    <section class="container section">
+      <div class="row" id="caja">
+        <div class="col m4" id="parteIzquierda">
+          <ul>
+            <li><a href="#" onclick="cambioDisplay('EGeneral')" id="textoIzquierda">Estructura general</a></li>
+            <li><a href="#" onclick="cambioDisplay('salas')" id="textoIzquierda">Salas</a></li>
+            <li><a href="#" onclick="cambioDisplay('DSA')" id="textoIzquierda">DSA</a></li>
+            <li><a href="#" onclick="cambioDisplay('DID')" id="textoIzquierda">DID</a></li>
+            <li><a href="#" onclick="cambioDisplay('DSC')" id="textoIzquierda">DSC</a></li>
+            <li><a href="#" onclick="cambioDisplay('DROS')" id="textoIzquierda">DROS</a></li>
+          </ul>
+        </div>
+        <div class="col m8" id="parteDerecha">
+          <div class="col m12" id="EGeneral">
+            <img src="./imagenes/organigrama/EGral.jpg" alt="">
+          </div>
+          <div class="col m12" id="salas">
+            <h5>Coordinador de sala de cómputo</h5>
+            <img src="./imagenes/organigrama/sergio.jpg" alt="">
+            <p>Nombre: Ing. Cruz Sergio Aguilar Díaz</p>
+            <br>
+            <hr id="separador">
+            <h5>Responsable sala de cómputo 1</h5>
+            <img src="./imagenes/organigrama/veronica.jpg" alt="">
+            <p>Nombre: Ing. Verónica Berenice Pérez Estrada</p>
+          </div>
+          <div class="col m12" id="DSA">
+            <h5>Jefe del DSA</h5>
+            <img src="./imagenes/organigrama/bety.jpg" alt="">
+            <p>Nombre: Ing. Beatriz Barrera Hernández</p>
+            <hr id="separador">
+            <h5>Responsable de Service Desk FI</h5>
+            <img src="./imagenes/organigrama/francisco.jpg" alt="">
+            <p>Nombre: Ing. Francisco Javier Montoya Cervantes</p>
+          </div>
+          <div class="col m12" id="DID">
+            <h5>Jefe del DID</h5>
+            <img src="./imagenes/organigrama/chary.jpg" alt="">
+            <p>Nombre: Ing. María del Rosario Barragán Paz</p>
+            <hr id="separador">
+            <h5>Web Master</h5>
+            <img src="./imagenes/organigrama/victor.jpg" alt="">
+            <p>Nombre: M.I. Víctor Manuel Durán Campos</p>
+          </div>
+          <div class="col m12" id="DSC">
+            <h5>Jefe del DSC</h5>
+            <img src="./imagenes/organigrama/rafael.jpg" alt="">
+            <p>Nombre: Ing. Rafael Sandoval Vázquez</p>
+          </div>
+          <div class="col m12" id="DROS">
+            <h5>Jefe del DROS</h5>
+            <img src="./imagenes/organigrama/noe.jpg" alt="">
+            <p>Nombre: Ing. Noe Cruz Marín</p>
+            <hr id="separador">
+            <h5>Administrador de infraestructura</h5>
+            <img src="./imagenes/organigrama/armando.jpg" alt="">
+            <p>Nombre: M.I. Jorge Armando Rodríguez Vera</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--FOOTER-->
+    <footer class="page-footer">
+        <!--PARTE AZUL-->
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8 left">
+                    <p>
+                        UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO <br>
+                        Facultad de Ingeniería, Av. Universidad 3000, <br>
+                        Ciudad Universitaria, Coyoacan, CDMX, C.P. 04510 <br>
+                        Edificio E <br>
+                        Tel.: 56 22 09 51 <br>
+                        Correo: dsa@unica.unam.mx <br>
+                    </p>
+                </div>
+                <div class="col s12 m4 right">
+                    <p>
+                        <div class= "col s2 m12">
+                                <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
+                        </div>
+                        <div class= "col s2 m12">
+                                <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
+                        </div>
+                        <div class= "col s2 m12">
+                                <a class="white-text text-lighten-3" href="#!"><i class="small material-icons">insert_chart</i></a>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+    <!--PARTE AMARILLA-->
+    <div class="footer-copyright">
+            <div class="container center-align white-text">
+                Todos los derechos reservados &copy; 1999 - 2019 / Facultad de ingeniería / UNAM | Versión 0.1
+            </div>
+    </div>
+
+
+
+    <!--CDN JAVASCRIPT DE MATERIALIZE-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        var displayActual = "EGeneral";//La variable indica el div que se está desplegando actualmente
+        function cambioDisplay(displayNuevo){
+          if (displayActual!=displayNuevo) {//Si el div a desplegar es el mismo que el actual no hace nada
+            document.getElementById(displayNuevo).style.display = "block";//Cambiamos los divs entre uno y otro
+            document.getElementById(displayActual).style.display = "none";
+            displayActual = displayNuevo; //Actualizamos la variable que indica el div que se esta desplegando
+          }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            M.AutoInit();
+            //SIDENAV
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+</html>
