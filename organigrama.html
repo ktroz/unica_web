@@ -143,18 +143,35 @@
     </style>
     <!--STYLE CUERPO-->
     <style>
-    #parteIzquierda{
-      position: fixed;
-      width: 250px;
-      height: 250px;
-      background-color: #1565c0;
-      border-radius: 10px;
+    body{
+      background-color:#283593;
     }
-    #parteDerecha{
-      float: right;
+    .sidebar{
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 40%;
+      overflow:hidden;
+    }
+    #columnaIzquierda{
+      margin: 100px 0px 0px 0px;
+      padding: 0px 20px 0px 20px;
+      background-color: #3949ab;
+      float: left;
+    }
+    #columnaDerecha{
+      padding: 0px 0px 0px 0px;
+      float: none;
+      display:inherit;
+    }
+    .elemento{
+      margin-left: 200px;
+      padding-top: 100px;
     }
     #textoIzquierda{
-      color: #1a237e;
+      color: #42a5f5;
       font-size: 25px;
     }
     /*Style divs*/
@@ -177,11 +194,14 @@
       display: none;
     }
     h5{
-      color: #4a148c;
+      color: #2196f3;
+    }
+    p{
+      color: #42a5f5;
     }
     #separador{
       width: 100%;
-      color: #311b92;
+      color: #2196f3;
     }
     </style>
     <!--JAVASCRIPT NAVBAR-->
@@ -256,67 +276,64 @@
             <li><a href="./instalaciones.html"><i class="material-icons">location_city</i>Instalaciones</a></li>
         </ul>
     </header>
-    <section class="container section">
-      <div class="row" id="caja">
-        <div class="col m4" id="parteIzquierda">
-          <ul>
-            <li><a href="#" onclick="cambioDisplay('EGeneral')" id="textoIzquierda">Estructura general</a></li>
-            <li><a href="#" onclick="cambioDisplay('salas')" id="textoIzquierda">Salas</a></li>
-            <li><a href="#" onclick="cambioDisplay('DSA')" id="textoIzquierda">DSA</a></li>
-            <li><a href="#" onclick="cambioDisplay('DID')" id="textoIzquierda">DID</a></li>
-            <li><a href="#" onclick="cambioDisplay('DSC')" id="textoIzquierda">DSC</a></li>
-            <li><a href="#" onclick="cambioDisplay('DROS')" id="textoIzquierda">DROS</a></li>
-          </ul>
+
+      <div class="sidebar col m4" id="columnaIzquierda">
+        <ul>
+          <li><a href="#" onclick="cambioDisplay('EGeneral')" id="textoIzquierda">Estructura general</a></li>
+          <li><a href="#" onclick="cambioDisplay('salas')" id="textoIzquierda">Salas</a></li>
+          <li><a href="#" onclick="cambioDisplay('DSA')" id="textoIzquierda">DSA</a></li>
+          <li><a href="#" onclick="cambioDisplay('DID')" id="textoIzquierda">DID</a></li>
+          <li><a href="#" onclick="cambioDisplay('DSC')" id="textoIzquierda">DSC</a></li>
+          <li><a href="#" onclick="cambioDisplay('DROS')" id="textoIzquierda">DROS</a></li>
+        </ul>
+      </div>
+      <div id="contenedor" class="col m8 content" id="columnaDerecha">
+        <div class="col m12 elemento" id="EGeneral">
+          <img src="./imagenes/organigrama/EGral.jpg" alt="">
         </div>
-        <div class="col m8" id="parteDerecha">
-          <div class="col m12" id="EGeneral">
-            <img src="./imagenes/organigrama/EGral.jpg" alt="">
-          </div>
-          <div class="col m12" id="salas">
-            <h5>Coordinador de sala de cómputo</h5>
-            <img src="./imagenes/organigrama/sergio.jpg" alt="">
-            <p>Nombre: Ing. Cruz Sergio Aguilar Díaz</p>
-            <br>
-            <hr id="separador">
-            <h5>Responsable sala de cómputo 1</h5>
-            <img src="./imagenes/organigrama/veronica.jpg" alt="">
-            <p>Nombre: Ing. Verónica Berenice Pérez Estrada</p>
-          </div>
-          <div class="col m12" id="DSA">
-            <h5>Jefe del DSA</h5>
-            <img src="./imagenes/organigrama/bety.jpg" alt="">
-            <p>Nombre: Ing. Beatriz Barrera Hernández</p>
-            <hr id="separador">
-            <h5>Responsable de Service Desk FI</h5>
-            <img src="./imagenes/organigrama/francisco.jpg" alt="">
-            <p>Nombre: Ing. Francisco Javier Montoya Cervantes</p>
-          </div>
-          <div class="col m12" id="DID">
-            <h5>Jefe del DID</h5>
-            <img src="./imagenes/organigrama/chary.jpg" alt="">
-            <p>Nombre: Ing. María del Rosario Barragán Paz</p>
-            <hr id="separador">
-            <h5>Web Master</h5>
-            <img src="./imagenes/organigrama/victor.jpg" alt="">
-            <p>Nombre: M.I. Víctor Manuel Durán Campos</p>
-          </div>
-          <div class="col m12" id="DSC">
-            <h5>Jefe del DSC</h5>
-            <img src="./imagenes/organigrama/rafael.jpg" alt="">
-            <p>Nombre: Ing. Rafael Sandoval Vázquez</p>
-          </div>
-          <div class="col m12" id="DROS">
-            <h5>Jefe del DROS</h5>
-            <img src="./imagenes/organigrama/noe.jpg" alt="">
-            <p>Nombre: Ing. Noe Cruz Marín</p>
-            <hr id="separador">
-            <h5>Administrador de infraestructura</h5>
-            <img src="./imagenes/organigrama/armando.jpg" alt="">
-            <p>Nombre: M.I. Jorge Armando Rodríguez Vera</p>
-          </div>
+        <div class="col m12 elemento" id="salas">
+          <h5>Coordinador de sala de cómputo</h5>
+          <img src="./imagenes/organigrama/sergio.jpg" alt="">
+          <p>Nombre: Ing. Cruz Sergio Aguilar Díaz</p>
+          <br>
+          <hr id="separador">
+          <h5>Responsable sala de cómputo 1</h5>
+          <img src="./imagenes/organigrama/veronica.jpg" alt="">
+          <p>Nombre: Ing. Verónica Berenice Pérez Estrada</p>
+        </div>
+        <div class="col m12 elemento" id="DSA">
+          <h5>Jefe del DSA</h5>
+          <img src="./imagenes/organigrama/bety.jpg" alt="">
+          <p>Nombre: Ing. Beatriz Barrera Hernández</p>
+          <hr id="separador">
+          <h5>Responsable de Service Desk FI</h5>
+          <img src="./imagenes/organigrama/francisco.jpg" alt="">
+          <p>Nombre: Ing. Francisco Javier Montoya Cervantes</p>
+        </div>
+        <div class="col m12 elemento" id="DID">
+          <h5>Jefe del DID</h5>
+          <img src="./imagenes/organigrama/chary.jpg" alt="">
+          <p>Nombre: Ing. María del Rosario Barragán Paz</p>
+          <hr id="separador">
+          <h5>Web Master</h5>
+          <img src="./imagenes/organigrama/victor.jpg" alt="">
+          <p>Nombre: M.I. Víctor Manuel Durán Campos</p>
+        </div>
+        <div class="col m12 elemento" id="DSC">
+          <h5>Jefe del DSC</h5>
+          <img src="./imagenes/organigrama/rafael.jpg" alt="">
+          <p>Nombre: Ing. Rafael Sandoval Vázquez</p>
+        </div>
+        <div class="col m12 elemento" id="DROS">
+          <h5>Jefe del DROS</h5>
+          <img src="./imagenes/organigrama/noe.jpg" alt="">
+          <p>Nombre: Ing. Noe Cruz Marín</p>
+          <hr id="separador">
+          <h5>Administrador de infraestructura</h5>
+          <img src="./imagenes/organigrama/armando.jpg" alt="">
+          <p>Nombre: M.I. Jorge Armando Rodríguez Vera</p>
         </div>
       </div>
-    </section>
     <!--FOOTER-->
     <footer class="page-footer">
         <!--PARTE AZUL-->

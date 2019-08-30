@@ -118,20 +118,71 @@
         }
 
     </style>
-    <!--STYLE COLUMNAS-->
+    <!--STYLE COLUMNAS Y BODY-->
     <style>
-      #columnaIzquierda{
-        margin: 100px 0px 0px 0px;
-        padding: 0px 20px 0px 20px;
-        background-color: #3949ab;
-        float: left;
-        /*position: fixed;*/
-      }
-      #columnaDerecha{
-        margin: 50px 0px 0px 0px;
-        padding: 0px 0px 0px 0px;
-        float: right;
-      }
+    body{
+      background-color:#283593;
+    }
+    #columnaIzquierda{
+      margin: 100px 0px 0px 0px;
+      padding: 0px 20px 0px 20px;
+      background-color: #3949ab;
+      float: left;
+    }
+    #columnaDerecha{
+      padding: 0px 0px 0px 0px;
+      float: right;
+      position: absolute;
+    }
+    .elemento{
+      margin-left: 200px;
+      padding-top: 100px;
+      padding-left: 150px;
+      padding-right: 150px;
+    }
+    .sidebar{
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 210px;
+      overflow:hidden;
+    }
+    /*Empieza el style de los menús*/
+    #textoMenus{
+      color:#42a5f5;
+    }
+    h4{
+      color: #283593;
+    }
+    .card{
+      background-color: #42a5f5;
+    }
+    .card-content{
+      background-color: #42a5f5;
+    }
+    .card-tabs{
+      background-color: #42a5f5;
+    }
+    .tabs{
+      background-color: #42a5f5;
+    }
+    #servicioIndividual{
+      color: #1a237e;
+    }
+    #DID{
+      display: block;
+    }
+    #DSA{
+      display: none;
+    }
+    #DROS{
+      display: none;
+    }
+    #DSC{
+      display: none;
+    }
     </style>
     <!--STYLE SIDENAV-->
     <style>
@@ -231,50 +282,108 @@
       <table>
         <tbody>
           <tr>
-            <td><a class="active" href="#home">EDUCAFI</a></td>
+            <td><a href="#home" onclick="cambioDisplay('DID')">DID</a></td>
           </tr>
           <tr>
-            <td><a href="#news">Bitácora FI</a></td>
+            <td><a href="#news" onclick="cambioDisplay('DSA')">DSA</a></td>
           </tr>
           <tr>
-            <td><a href="#contact">Inventarios</a></td>
+            <td><a href="#contact" onclick="cambioDisplay('DROS')">DROS</a></td>
           </tr>
           <tr>
-            <td><a href="#about">Habilitación de redes</a></td>
-          </tr>
-          <tr>
-            <td><a href="#about">Servidor Web</a></td>
-          </tr>
-          <tr>
-            <td><a href="#about">Servidor de correo</a></td>
-          </tr>
-          <tr>
-            <td><a href="#about">Google for education</a></td>
-          </tr>
-          <tr>
-            <td><a href="#about">Cloud storage</a></td>
-          </tr>
-          <tr>
-            <td><a href="#about">Diagnóstico de seguridad</a></td>
-          </tr>
-          <tr>
-            <td><a href="#about">Firewall</a></td>
-          </tr>
-          <tr>
-            <td><a href="#about">Analisis forense</a></td>
-          </tr>
-          <tr>
-            <td><a href="#about">Administración de VPN</a></td>
-          </tr>
-          <tr>
-            <td><a href="#about">virtualización</a></td>
+            <td><a href="#about" onclick="cambioDisplay('DSC')">DSC</a></td>
           </tr>
         </tbody>
       </table>
     </div>
+    <div id="contenedor" class="col m8 content" id="columnaDerecha">
 
-    <div id="contenedor" class="col m8" id="columnaDerecha">
-      <img src="./imagenes/becarios.jpg">
+      <div class="card elemento" id="DID">
+        <div class="card-content">
+          <h4>Departamento de Investigación y Desarrollo</h4>
+        </div>
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab"><a id="servicioIndividual" href="#bitacora">Bitacora FI</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#inventarios">Inventarios</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#sicie">Sicie</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#geomatica">Ingenieria Geomatica</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#constancias">Constancias</a></li>
+          </ul>
+        </div>
+        <div class="card-content">
+          <div id="bitacora">
+            <p>La bitacora FI es un software que se especializa en las encuestas de medición para el rendimiento académico</p>
+            <p>Para la contratación del servicio es necesario acudir con el ingeniero Huezo de COPADI</p>
+          </div>
+          <div id="inventarios">Test 2<br>Test 2<br>Test 2<br>Test 2<br></div>
+          <div id="sicie">Test 3<br>Test 3<br>Test 3<br>Test 3<br></div>
+          <div id="geomatica">Test 3<br>Test 3<br>Test 3<br>Test 3<br></div>
+          <div id="constancias">Test 3<br>Test 3<br>Test 3<br>Test 3<br></div>
+        </div>
+      </div>
+
+      <div class="card elemento" id="DSA">
+        <div class="card-content">
+          <h4>Departamento de Servicios Academicos</h4>
+        </div>
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab"><a id="servicioIndividual" href="#educafi">educafi</a></li>
+          </ul>
+        </div>
+        <div class="card-content">
+          <div id="educafi">
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="card elemento" id="DROS">
+        <div class="card-content">
+          <h4>Departamento de Redes y Operación de Servidores</h4>
+        </div>
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab"><a id="servicioIndividual" href="#redes">habilitacion de redes</a></li>
+            <li class="tab"><a id="servicioIndividual" class="active" href="#web">servidor web</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#correo">servidor de correo</a></li>
+          </ul>
+        </div>
+        <div class="card-content">
+          <div id="redes">Test 1<br>Test 1<br>Test 1<br>Test 1<br></div>
+          <div id="web">Test 2<br>Test 2<br>Test 2<br>Test 2<br></div>
+          <div id="correo">Test 3<br>Test 3<br>Test 3<br>Test 3<br></div>
+        </div>
+      </div>
+
+      <div class="card elemento" id="DSC">
+        <div class="card-content">
+          <h4>Departamento de Seguridad en Cómputo</h4>
+        </div>
+        <div class="card-tabs">
+          <ul class="tabs">
+            <li class="tab"><a id="servicioIndividual" href="#google">google for education</a></li>
+            <li class="tab"><a id="servicioIndividual" class="active" href="#cloud">cloud storage</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#diagnostico">diagnostico de seguridad</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#firewall">firewall</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#sensor">sensor de seguridad</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#forense">analisis forense</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#virtualizacion">virtualizacion</a></li>
+            <li class="tab"><a id="servicioIndividual" href="#VPN">administracion de VPN</a></li>
+          </ul>
+        </div>
+        <div class="card-content">
+          <div id="google">Test 1<br>Test 1<br>Test 1<br>Test 1<br></div>
+          <div id="cloud">Test 2<br>Test 2<br>Test 2<br>Test 2<br></div>
+          <div id="diagnostico">Test 3<br>Test 3<br>Test 3<br>Test 3<br></div>
+          <div id="firewall">Test 1<br>Test 1<br>Test 1<br>Test 1<br></div>
+          <div id="sensor">Test 2<br>Test 2<br>Test 2<br>Test 2<br></div>
+          <div id="forense">Test 3<br>Test 3<br>Test 3<br>Test 3<br></div>
+          <div id="virtualizacion">Test 1<br>Test 1<br>Test 1<br>Test 1<br></div>
+          <div id="VPN">Test 2<br>Test 2<br>Test 2<br>Test 2<br></div>
+        </div>
+      </div>
     </div>
 
     <!--FOOTER-->
@@ -321,6 +430,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
         <script>
+            var displayActual = "DID";//La variable indica el div que se está desplegando actualmente
+            function cambioDisplay(displayNuevo){
+              if (displayActual!=displayNuevo) {//Si el div a desplegar es el mismo que el actual no hace nada
+                document.getElementById(displayNuevo).style.display = "block";//Cambiamos los divs entre uno y otro
+                document.getElementById(displayActual).style.display = "none";
+                displayActual = displayNuevo; //Actualizamos la variable que indica el div que se esta desplegando
+              }
+            }
             document.addEventListener('DOMContentLoaded', function () {
                 M.AutoInit();
                 //SIDENAV
