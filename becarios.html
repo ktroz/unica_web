@@ -126,39 +126,6 @@
             padding-bottom:20px;
         }
     </style>
-    <!--STYLE CONTENIDO(CAJAS GENERICAS)-->
-    <style>
-      h2{
-        color:#311b92;
-      }
-      #cartas{
-        margin: 25px 0px 0px 0px;
-        padding: 0px 0px 0px 0px;
-        background-color: #283595;
-      }
-      #textoCartas{
-        color: #42a5f5;
-      }
-      #tituloCartas{
-        color: #2196f3;
-      }
-      #imagenHistoria{
-        width: 100%;
-        height: 40%;
-      }
-      /*Margen y padding arriba derecha abajo izquierda.*/
-      #contenido{
-        margin: 0px 0px 0px 0px;
-        padding: 0px 0px 0px 0px;
-      }
-      #columnaCentral{
-        margin-top: 100px;
-      }
-      #columna{
-        background-color: #303f9f;
-        height: 1400px;
-      }
-    </style>
     <!--STYLE FOOTER-->
     <style>
     .page-footer{
@@ -172,6 +139,50 @@
         margin-top: -20px;
         background-color: #e8ca4d;
     }
+    </style>
+    <!--STYLE CUERPO-->
+    <style>
+      #fases{
+        margin: 100px 0px 0px 0px;
+        padding: 0px 150px 0px 150px;
+        background-color:#283593;
+      }
+      #historiaConvocatoria{
+        margin: -20px 0px 0px 0px;
+        padding: 30px 150px 30px 150px;
+        background-color: #3949ab;
+      }
+      #requisitos{
+        margin: -20px 0px 0px 0px;
+        padding: 30px 150px 30px 150px;
+        background-color: #42a5f5;
+      }
+      #tituloEtapas{
+        color: #2196f3;
+      }
+      #subituloEtapas{
+        color: #2196f3;
+      }
+      #parrafoEtapas{
+        color: #42a5f5;
+      }
+      #tituloHistoria{
+        color: #42a5f5;
+      }
+      #tituloRequisitos{
+        color: #1a237e;
+      }
+      #parrafoRequisitos{
+        color: #1a237e;
+      }
+      #imagenes{
+        width: 700px;
+        height: 1000px;
+      }
+      #botonRequisitos{
+        color:#1a237e;
+        background-color: #2196f3;
+      }
     </style>
     <!--JAVASCRIPT NAVBAR-->
     <script type="text/javascript">
@@ -206,7 +217,7 @@
 </head>
 <ul id="organizacionContenido" class="dropdown-content">
   <li><a href="./ideales.html" id="textoOrganizacion">Ideales</a></li>
-  <li><a href="#!" id="textoOrganizacion">Marco Historico</a></li>
+  <li><a href="./historia.html" id="textoOrganizacion">Marco Historico</a></li>
   <li><a href="./organigrama.html" id="textoOrganizacion">Organigrama</a></li>
 </ul>
 <body>
@@ -225,11 +236,11 @@
                         <h6 class="hide-on-med-and-down">&nbsp;&ensp;UNIDAD DE SERVICIOS DE COMPUTO ACADEMICO</h6>
                     </div>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <li><a href="" class="dropdown-trigger" data-target="organizacionContenido">Organización</a></li>
-                        <li><a href="./servicios.html">Servicios</a></li>
-                        <li><a href="./becarios.html">Becarios</a></li>
-                        <li><a href="./cursos.html">Cusos</a></li>
-                        <li><a href="./instalaciones.html">Instalaciones</a></li>
+                      <li><a href="" class="dropdown-trigger" data-target="organizacionContenido">Organización</a></li>
+                      <li><a href="./servicios.html">Servicios</a></li>
+                      <li><a href="./becarios.html">Becarios</a></li>
+                      <li><a href="./cursos.html">Cusos</a></li>
+                      <li><a href="./instalaciones.html">Instalaciones</a></li>
                     </ul>
                 </div>
             </div>
@@ -245,40 +256,61 @@
             <li><a href=""><i class="material-icons">location_city</i>Instalaciones</a></li>
         </ul>
     </header>
-    <div class="row" id="contenido">
-      <div class="col m2 contenido z-depth-5" id="columna">
-
+    <div id="fases">
+      <div class="row">
+        <div class="col m12">
+          <h3 id="tituloEtapas">Etapas para formarte como becario de UNICA</h3>
+          <h4 id="subituloEtapas">Primera fase</h4>
+          <p id="parrafoEtapas">
+            En esta fase se recibe capacitación sobre temas de cómputo y las relaciones humanas con duración de un semestre escolar. Al final se realiza una evaluación y selecció para pasar a la segunda fase. Cosas que se aprenderán en el curso:
+          </p>
+          <ul style="list-style-type:circle;" id="parrafoEtapas">
+            <li>HTML</li>
+            <li>Lenguaje C</li>
+            <li>Java</li>
+            <li>REdes de Datos</li>
+            <li>Formación de instructores</li>
+            <li>Linux básico</li>
+            <li>Administración de servidores</li>
+            <li>Python</li>
+            <li>Seguridad en cómputo</li>
+            <li>Base de datos</li>
+          </ul>
+          <h4 id="subituloEtapas">Segunda fase</h4>
+          <p id="parrafoEtapas">
+            En esta fase se pone en practica todo lo aprendido en la primera fase, realizando prácticas durante un semestre en los departamentos que conforman a UNICA. Al finalizar se hará una nueva evaluación y selección para la tercera fase.
+          </p>
+          <h4 id="subituloEtapas">Tercera fase</h4>
+          <p id="parrafoEtapas">
+            Esta es la última fase, te conviertes en becario y puedes desarrollarte profesionalmente en uno de los departamentos de UNICA y especializarte en algún area de cómputo. Esta fase consta de tres etapas, a las cuales podrás escalar de acuerdo a tu desempeño. Cada una tiene una duración de un semestre.-
+          </p>
+        </div>
       </div>
-      <div class="col m8 center contenido" id="columnaCentral">
-        <h2>Linea de tiempo</h2>
-        <img src="./imagenes/historia/historia.png" id="imagenHistoria">
-        <div class="card indigo darken-2" id="cartas">
-          <div class="card-content light-blue-text z-depth-5">
-            <span class="card-title" id="tituloCartas">UNICA en la FI</span>
-            <p id="textoCartas">En la facultad de ingeniería somos proveedores de varios servicios, incluyendo virtualización, cloud storage entre
-            otros. También impartimos cursos de varios temas, con un descuento a estudiantes.</p>
-          </div>
+    </div>
+    <div id="historiaConvocatoria">
+      <div class="row">
+        <div class="col m6">
+          <h4 id="tituloHistoria">Becarios</h4>
+          <img id="imagenes" src="./imagenes/becarios/becarios.jpg" alt="">
         </div>
-
-        <div class="card indigo darken-2" id="cartas">
-          <div class="card-content light-blue-text z-depth-5">
-            <span class="card-title" id="tituloCartas">UNICA en la UNAM</span>
-            <p id="textoCartas">En la facultad de ingeniería somos proveedores de varios servicios, incluyendo virtualización, cloud storage entre
-            otros. También impartimos cursos de varios temas, con un descuento a estudiantes.</p>
-          </div>
+        <div class="col m6">
+          <h4 id="tituloHistoria">Nuestra historia</h4>
+          <img id="imagenes" src="./imagenes/becarios/historia.jpg" alt="no funciona :c">
         </div>
-
-        <div class="card indigo darken-2" id="cartas">
-          <div class="card-content light-blue-text z-depth-5">
-            <span class="card-title" id="tituloCartas">UNICA en el Exterior</span>
-            <p id="textoCartas">Mediante el programa de becarios varios de los estudiante pertenecientes a la unidad tienen una gran influencia
-            en el mundo fuera de la UNAM, participando en empresas como google, oracle entre otros.</p>
-          </div>
-        </div>
-
       </div>
-      <div class="col m2 contenido z-depth-5" id="columna">
-
+    </div>
+    <div id="requisitos">
+      <div class="row center">
+        <h3 id="tituloRequisitos">¿Cuales son los requisitos para entrar a nuestro programa?</h3>
+        <p id="parrafoRequisitos">
+          Ser alumno de la facultad de ingeniería o carreras afines <br>
+          Tener promedio de 8.5 o superior <br>
+          Cursar entre 2do y 6to semestre <br>
+          Solicitud de ingreso <br>
+          Entrevista <br>
+          Presentar examen de selección <br>
+        </p>
+        <button class="waves-effect waves-light btn" name="button" id="botonRequisitos">Envia tu solicitud!</button>
       </div>
     </div>
     <!--FOOTER-->
@@ -311,8 +343,6 @@
                     </div>
                 </div>
             </div>
-
-
         </footer>
         <!--PARTE AMARILLA-->
         <div class="footer-copyright">
@@ -327,6 +357,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
         <script>
+            var displayActual = "DID";//La variable indica el div que se está desplegando actualmente
+            function cambioDisplay(displayNuevo){
+              if (displayActual!=displayNuevo) {//Si el div a desplegar es el mismo que el actual no hace nada
+                document.getElementById(displayNuevo).style.display = "block";//Cambiamos los divs entre uno y otro
+                document.getElementById(displayActual).style.display = "none";
+                displayActual = displayNuevo; //Actualizamos la variable que indica el div que se esta desplegando
+              }
+            }
             document.addEventListener('DOMContentLoaded', function () {
                 M.AutoInit();
                 //SIDENAV
